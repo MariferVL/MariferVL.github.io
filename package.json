@@ -1,0 +1,29 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "A futuristic and visually captivating portfolio website showcasing my journey as a frontend developer. Explore my projects, skills, and creative vision for web design.",
+  "main": "app.js",
+  "scripts": {
+    "test": "test --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariferVL/MariferVL.github.io.git"
+  },
+  "keywords": [
+    "portfolio",
+    "frontend",
+    "web",
+    "development",
+    "design"
+  ],
+  "author": "María-Fernanda Villalobos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MariferVL/MariferVL.github.io/issues"
+  },
+  "homepage": "https://github.com/MariferVL/MariferVL.github.io#readme",
+  "dependencies": {
+    "firebase": "^10.1.0"
+  }
+}
