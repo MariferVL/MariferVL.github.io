@@ -4,7 +4,14 @@
   "description": "A futuristic and visually captivating portfolio website showcasing my journey as a frontend developer. Explore my projects, skills, and creative vision for web design.",
   "main": "app.js",
   "scripts": {
-    "test": "test --coverage"
+    "build": "vite build",
+    "deploy": "firebase deploy",
+    "dev": "vite dev public",
+    "start": "npm run dev",
+    "lint": "eslint .",
+    "test": "test --coverage",
+    "prettify": "prettier --write .",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -25,5 +32,10 @@
   "homepage": "https://github.com/MariferVL/MariferVL.github.io#readme",
   "dependencies": {
     "firebase": "^10.1.0"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }
