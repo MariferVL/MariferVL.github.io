@@ -149,7 +149,7 @@ header {
 .bb8-toggle__container {
   width: var(--toggle-width);
   height: var(--toggle-height);
-  background: var(--toggle-bg);
+  background: linear-gradient(45deg, #EF3DF2, #7F1B8C, #350C40, #1F1426, #2745F2);
   background-size: 100% 11.25em;
   background-position-y: -5.625em;
   border-radius: var(--radius);
@@ -158,6 +158,8 @@ header {
   -o-transition: var(--transition);
   transition: var(--transition);
 }
+
+
 
 .bb8 {
   display: -webkit-box;
