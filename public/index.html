@@ -40,75 +40,118 @@
 
 <body>
   <div class="background"></div>
-  <header>
-    <div id="mainNavigation">
-      <nav role="navigation">
-        <div class="py-3 text-center border-bottom">
-          <img src="/static_files/images/logos/logo_3_white_2.png" alt="" class="invert">
-        </div>
-      </nav>
-      <div class="navbar-expand-md">
-        <div class="navbar-dark text-center my-2">
-          <button class="navbar-toggler w-75" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span> <span class="align-middle">Menu</span>
-          </button>
-        </div>
-        <div class="text-center mt-3 collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mx-auto ">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Book Hotel</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Destinations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Policy</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Company
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">About Me</a></li>
-                <li><a class="dropdown-item" href="#">Blog</a></li>
-                <li><a class="dropdown-item" href="#">Contact Me</a></li>
-              </ul>
-            </li>
-          </ul>
+  <header id="home">
+  
+    <nav id="mainNavigation" class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large" role="navigation">
+      <div class="language-switch">
+        <label class="switch">
+          <input type="checkbox" id="language-toggle">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      
+      
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#home">
+          <img src="images/viole.gif" alt="Logo" class="round-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Offcanvas</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" data-translate="homeNav" aria-current="page" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#video">Video</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#life">Life</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#storytelling">Story Telling</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cv">Resume</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#blog">Blog</a>
+              </li>
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li> -->
+            </ul>
+            <!-- <form class="d-flex mt-3 mt-lg-0" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+          </div>
         </div>
       </div>
-    </div>
+    </nav>
   </header>
   <main>
     <section id="video">
-      <!-- Inserta aquí el video con versión en inglés y español -->
+      <div class="video-container">
+        <video controls>
+          <source src="images/Vivir.mp4" type="video/mp4">
+          <track src="subtitulos-esp.vtt" kind="subtitles" srclang="es" label="Español">
+          <source src="video-eng.mp4" type="video/mp4">
+          <track src="subtitulos-eng.vtt" kind="subtitles" srclang="en" label="English">
+        </video>
+      </div>
     </section>
     <section id="about">
       <!-- Contenido sobre ti -->
     </section>
     <section id="life">
       <!-- Contenido sobre tu vida y gustos -->
+
     </section>
     <section id="projects">
       <!-- Tus proyectos en frontend, Python y UX Design -->
+
     </section>
     <section id="storytelling">
       <!-- Storytelling según la idea de UX Design -->
+
     </section>
     <section id="cv">
       <!-- Enlaces a tu CV en inglés y español -->
+
     </section>
     <section id="contact">
       <!-- Información de contacto -->
+
     </section>
     <section id="blog">
       <!-- Blog -->
+
     </section>
   </main>
   <footer class="container py-5">
@@ -167,7 +210,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
-  <script src="../app.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/firebase_config.js"></script>
+
 </body>
 
 </html>

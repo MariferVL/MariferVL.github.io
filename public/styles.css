@@ -38,6 +38,93 @@ header {
 }
 
 
+/* Languages */
+
+.language-switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: white;
+}
+
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: relative; /* Cambio de posición a "relative" */
+  cursor: pointer;
+  width: 40px; /* Ancho ajustado para alinear con el switch */
+  height: 20px;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 8px;
+  display: flex; /* Agregado para centrar elementos internos */
+  align-items: center; /* Agregado para centrar elementos internos */
+  justify-content: space-between; /* Agregado para centrar elementos internos */
+  padding: 2px 6px; /* Ajuste de espacio interno */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Cambio de posición para el punto del switch */
+input:checked + .slider:before {
+  left: auto;
+  right: 2px;
+  transform: translateX(20px);
+}
+
+/* Cambio de imagen de bandera para español */
+input:checked + .slider .flag-english {
+  transform: translateX(0);
+}
+
+/* Cambio de imagen de bandera para inglés */
+input:checked + .slider .flag-spanish {
+  transform: translateX(100%);
+}
+
+
+input:not(:checked) + .slider {
+  background-image: url('images/spain.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+input:checked + .slider {
+  background-image: url('images/ukFlag.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
 /* Navbar */
 
 #mainNavigation {
