@@ -12,12 +12,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+
   <link rel="stylesheet" href="styles.css">
-  <!-- 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nombre+de+la+Fuente&display=swap">
-   -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
   <link rel="icon" type="image/png" href="favicon.png">
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -40,19 +43,19 @@
   <link rel="canonical" href="https://www.misitio.com">
 </head>
 
-<body> 
+<body>
   <button type="button" class="btn btn-floating btn-lg" id="btn-back-to-top">
     <i class="fas fa-angle-double-up"></i>
     <!-- <i class="fas fa-arrow-alt-circle-up"></i> -->
   </button>
   <div class="background"></div>
- 
+
   <header>
     <div class="language-switch">
       <div class="toggle-container">
         <span class="language-label">Esp</span>
         <label class="bb8-toggle">
-          <input id="language-toggle" class="bb8-toggle__checkbox hover-container" type="checkbox">
+          <input id="language-toggle" class="bb8-toggle__checkbox" type="checkbox">
           <div class="bb8-toggle__container">
             <div class="bb8">
               <div class="bb8__head-container">
@@ -76,10 +79,17 @@
         <a class="navbar-brand" href="#home">
           <img src="images/viole.gif" alt="Logo" class="round-logo">
         </a>
-        <button class="navbar-toggler hover-container" type="button" data-bs-toggle="offcanvas"
+        <input type="checkbox" id="checkbox" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+        <label for="checkbox" class="toggle">
+            <div class="bars" id="bar1"></div>
+            <div class="bars" id="bar2"></div>
+            <div class="bars" id="bar3"></div>
+        </label>
+        <!-- <button class="navbar-toggler hover-container" type="button" data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
         <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2"
           aria-labelledby="offcanvasNavbar2Label">
           <div class="offcanvas-header">
@@ -101,7 +111,7 @@
               <li class="nav-item hover-container">
                 <a class="nav-link" href="#blog">Blog</a>
               </li>
-              <li class="nav-item dropdown hover-container">
+              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#about" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
                   About Me
@@ -137,7 +147,38 @@
       </div>
     </section>
     <section id="about">
-      <!-- Contenido sobre ti -->
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">About Me</h2>
+          <p>
+            ¡Saludos, visitantes del futuro!<br>
+            
+            Bienvenidos a mi espacio virtual, donde un ser tecnológico como yo se mezcla con líneas de código y
+            creatividad. Mi viaje comenzó en el mundo de la salud, pero mi pasión por la tecnología me llevó a explorar
+            las maravillas del desarrollo de software.<br>
+
+            Después de incontables líneas de código y travesías por el vasto mundo del desarrollo web y móvil, aquí
+            estoy, lista para enfrentar desafíos futuristas. Mi misión: transformar ideas en experiencias digitales
+            asombrosas.<br>
+
+            ¡Vamos a codificar el mañana juntos!
+
+            <!-- ¡Hola! Soy <span class="highlight">María-Fernanda</span> -->
+          </p>
+        </div>
+        <div class="col-md-5">
+          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+            height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+            preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>Marifer</title>
+            <rect />
+            <image href="./images/aboutMe.gif" width="100%" height="100%" />
+          </svg>
+
+        </div>
+      </div>
+
+
     </section>
     <section id="life">
       <!-- Contenido sobre tu vida y gustos -->

@@ -12,18 +12,10 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
-  cursor: none !important;
+  font-family: 'Orbitron', sans-serif;
+  cursor: url('images/pointer.png'), auto;
+  padding: 2rem;
 }
-
-body:hover #laser-cursor {
-  opacity: 1;
-  border: none;
-  box-shadow:
-    0 0 3rem rgba(239, 61, 242, 0.8),
-    0 0 3rem rgba(39, 69, 242, 0.8);
-}
-
 
 .background {
   position: fixed;
@@ -39,37 +31,13 @@ body:hover #laser-cursor {
 }
 
 
-#laser-cursor {
-  cursor: none !important;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background-color: white;
-  position: fixed;
-  top: 0;
-  opacity: 0;
-  pointer-events: none;
-  mix-blend-mode: difference;
-  transition: transform 500ms;
-}
-
-#laser-cursor::after {
-  content: "";
-  border-radius: 50%;
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  border: 1px solid white;
-  width: 16px;
-  height: 16px;
-}
-
-#laser-cursor.zoom {
-  transform: scale(3);
-}
-
+a,
+button,
+i,
+input[type="checkbox"],
+#language-toggle,
 .hover-container {
-  cursor: none !important;
+  cursor: url('images/hand-cursor.png'), auto;
 }
 
 
@@ -85,7 +53,7 @@ body:hover #laser-cursor {
   border: 2px solid transparent;
   border-radius: 50%;
   background: none;
-  cursor:var(--toggle-bg);
+  cursor: var(--toggle-bg);
   filter: brightness(2.5) drop-shadow(0 0 23rem #2745F2);
   color: #2745F2;
   transition: filter 0.3s ease-in-out;
@@ -168,7 +136,7 @@ header {
 .bb8-toggle {
   cursor: pointer;
   margin-top: var(--margin-top-for-head);
-  font-size: var(--toggle-size);
+  font-size: 4px;
 }
 
 .bb8-toggle__checkbox {
@@ -714,7 +682,7 @@ header {
 /* Navbar */
 
 #mainNavigation {
-  padding: 1rem;
+  padding: 2rem 1rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -767,7 +735,6 @@ a.dropdown-item:hover {
   min-width: 8vw;
 }
 
-
 .active {
   color: rgb(44, 42, 42) !important;
 
@@ -789,11 +756,13 @@ a.dropdown-item:hover {
 }
 
 .round-logo {
-  width: 8rem;
-  height: 8rem;
+  width: 5rem;
   border-radius: 50%;
 }
 
+.offcanvas-header {
+  padding: 3rem 1rem;
+  }
 
 /** Setions **/
 section {
@@ -806,13 +775,21 @@ section {
 
 #home {
   background-color: transparent;
+  margin: 11rem auto 0;
   text-align: center;
   position: relative;
   max-width: 100%;
-  width: 65%;
   height: auto;
-  margin: 11rem auto 0;
+  width: 100%;
+
 }
+
+
+#mainNavigation {
+  /* padding: 1rem; */
+
+}
+
 
 .video-container {
   display: inline-block;
@@ -826,7 +803,6 @@ section {
   box-shadow:
     0 0 3rem rgba(239, 61, 242, 0.8),
     0 0 3rem rgba(39, 69, 242, 0.8);
-  /* Agrega el segundo color a la sombra */
   animation: neonGlow 10s 2 alternate, neonSteady 2s infinite;
 }
 
@@ -866,9 +842,97 @@ video {
   border: none;
 }
 
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: .5s;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(176, 92, 255);
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: .8s;
+}
+
+#bar1,#bar3 {
+  width: 70%;
+}
+
+
+/* About Me */
+
+h1,
+h2 {
+  color: white;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #b2c8f1;
+  text-align: justify;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+span.highlight {
+  background-color: #2745f28b;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+}
+
+a {
+  color: #2745F2;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
 /* Media queries para responsividad */
 @media screen and (min-width: 768px) {
   section {
     padding: 4rem;
   }
+
+  .bb8-toggle {
+    font-size: var(--toggle-size);
+  }
+
+  .round-logo {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  #mainNavigation {
+    padding: 1rem;
+
+  }
+
+  #home {
+    width: 65%;
+  }
+
 }
