@@ -13,7 +13,17 @@ html {
 
 body {
   font-family: Arial, sans-serif;
+  cursor: none !important;
 }
+
+body:hover #laser-cursor {
+  opacity: 1;
+  border: none;
+  box-shadow:
+    0 0 3rem rgba(239, 61, 242, 0.8),
+    0 0 3rem rgba(39, 69, 242, 0.8);
+}
+
 
 .background {
   position: fixed;
@@ -29,6 +39,78 @@ body {
 }
 
 
+#laser-cursor {
+  cursor: none !important;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transition: transform 500ms;
+}
+
+#laser-cursor::after {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  border: 1px solid white;
+  width: 16px;
+  height: 16px;
+}
+
+#laser-cursor.zoom {
+  transform: scale(3);
+}
+
+.hover-container {
+  cursor: none !important;
+}
+
+
+/* Scroll-Up */
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: none;
+  cursor:var(--toggle-bg);
+  filter: brightness(2.5) drop-shadow(0 0 23rem #2745F2);
+  color: #2745F2;
+  transition: filter 0.3s ease-in-out;
+}
+
+#btn-back-to-top i {
+  position: relative;
+  z-index: 2;
+}
+
+#btn-back-to-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #2745F2;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
 header {
   position: fixed;
   top: 0;
@@ -40,95 +122,599 @@ header {
 
 /* Languages */
 
+/* Estilos para el switch de idioma */
 .language-switch {
   position: absolute;
   top: 20px;
   right: 20px;
+  z-index: 1000;
+}
+
+/* Contenedor del toggle */
+.toggle-container {
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 3px;
   color: white;
 }
 
-
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 20px;
+/* Alinear verticalmente las labels con el toggle */
+.language-label {
+  margin: 0 5px;
+  font-size: 14px;
 }
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+.bb8-toggle {
+  --toggle-size: 8px;
+  --toggle-width: 10.625em;
+  --toggle-height: 5.625em;
+  --toggle-offset: calc((var(--toggle-height) - var(--bb8-diameter)) / 2);
+  --toggle-bg: linear-gradient(#2c4770, #070e2b 35%, #628cac 50% 70%, #a6c5d4) no-repeat;
+  --bb8-diameter: 4.375em;
+  --radius: 99em;
+  --transition: 0.4s;
+  --accent: #de7d2f;
+  --bb8-bg: #fff;
 }
 
-.slider {
-  position: relative; /* Cambio de posición a "relative" */
+.bb8-toggle,
+.bb8-toggle *,
+.bb8-toggle *::before,
+.bb8-toggle *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bb8-toggle {
   cursor: pointer;
-  width: 40px; /* Ancho ajustado para alinear con el switch */
-  height: 20px;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 8px;
-  display: flex; /* Agregado para centrar elementos internos */
-  align-items: center; /* Agregado para centrar elementos internos */
-  justify-content: space-between; /* Agregado para centrar elementos internos */
-  padding: 2px 6px; /* Ajuste de espacio interno */
+  margin-top: var(--margin-top-for-head);
+  font-size: var(--toggle-size);
 }
 
-.slider:before {
+.bb8-toggle__checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.bb8-toggle__container {
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+  background: var(--toggle-bg);
+  background-size: 100% 11.25em;
+  background-position-y: -5.625em;
+  border-radius: var(--radius);
+  position: relative;
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.bb8 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: absolute;
+  top: calc(var(--toggle-offset) - 1.688em + 0.188em);
+  left: var(--toggle-offset);
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+  z-index: 2;
+}
+
+.bb8__head-container {
+  position: relative;
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+  z-index: 2;
+  -webkit-transform-origin: 1.25em 3.75em;
+  -ms-transform-origin: 1.25em 3.75em;
+  transform-origin: 1.25em 3.75em;
+}
+
+.bb8__head {
+  overflow: hidden;
+  margin-bottom: -0.188em;
+  width: 2.5em;
+  height: 1.688em;
+  background: -o-linear-gradient(transparent 0.063em,
+      dimgray 0.063em 0.313em,
+      transparent 0.313em 0.375em,
+      var(--accent) 0.375em 0.5em,
+      transparent 0.5em 1.313em,
+      silver 1.313em 1.438em,
+      transparent 1.438em),
+    -o-linear-gradient(45deg, transparent 0.188em, var(--bb8-bg) 0.188em 1.25em, transparent 1.25em),
+    -o-linear-gradient(135deg, transparent 0.188em, var(--bb8-bg) 0.188em 1.25em, transparent 1.25em),
+    -o-linear-gradient(var(--bb8-bg) 1.25em, transparent 1.25em);
+  background: -o-linear-gradient(transparent 0.063em,
+      dimgray 0.063em 0.313em,
+      transparent 0.313em 0.375em,
+      var(--accent) 0.375em 0.5em,
+      transparent 0.5em 1.313em,
+      silver 1.313em 1.438em,
+      transparent 1.438em),
+    -o-linear-gradient(45deg, transparent 0.188em, var(--bb8-bg) 0.188em 1.25em, transparent 1.25em),
+    -o-linear-gradient(135deg, transparent 0.188em, var(--bb8-bg) 0.188em 1.25em, transparent 1.25em),
+    -o-linear-gradient(var(--bb8-bg) 1.25em, transparent 1.25em);
+  background: -o-linear-gradient(transparent 0.063em,
+      dimgray 0.063em 0.313em,
+      transparent 0.313em 0.375em,
+      var(--accent) 0.375em 0.5em,
+      transparent 0.5em 1.313em,
+      silver 1.313em 1.438em,
+      transparent 1.438em),
+    -o-linear-gradient(45deg, transparent 0.188em, var(--bb8-bg) 0.188em 1.25em, transparent 1.25em),
+    -o-linear-gradient(135deg, transparent 0.188em, var(--bb8-bg) 0.188em 1.25em, transparent 1.25em),
+    -o-linear-gradient(var(--bb8-bg) 1.25em, transparent 1.25em);
+  background: -o-linear-gradient(transparent 0.063em,
+      dimgray 0.063em 0.313em,
+      transparent 0.313em 0.375em,
+      var(--accent) 0.375em 0.5em,
+      transparent 0.5em 1.313em,
+      silver 1.313em 1.438em,
+      transparent 1.438em),
+    -o-linear-gradient(45deg, transparent 0.188em, var(--bb8-bg) 0.188em 1.25em, transparent 1.25em),
+    -o-linear-gradient(135deg, transparent 0.188em, var(--bb8-bg) 0.188em 1.25em, transparent 1.25em),
+    -o-linear-gradient(var(--bb8-bg) 1.25em, transparent 1.25em);
+  background: linear-gradient(transparent 0.063em,
+      dimgray 0.063em 0.313em,
+      transparent 0.313em 0.375em,
+      var(--accent) 0.375em 0.5em,
+      transparent 0.5em 1.313em,
+      silver 1.313em 1.438em,
+      transparent 1.438em),
+    linear-gradient(45deg,
+      transparent 0.188em,
+      var(--bb8-bg) 0.188em 1.25em,
+      transparent 1.25em),
+    linear-gradient(-45deg,
+      transparent 0.188em,
+      var(--bb8-bg) 0.188em 1.25em,
+      transparent 1.25em),
+    linear-gradient(var(--bb8-bg) 1.25em, transparent 1.25em);
+  border-radius: var(--radius) var(--radius) 0 0;
+  position: relative;
+  z-index: 1;
+  -webkit-filter: drop-shadow(0 0.063em 0.125em gray);
+  filter: drop-shadow(0 0.063em 0.125em gray);
+}
+
+.bb8__head::before {
   content: "";
-  height: 16px;
-  width: 16px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  transition: 0.4s;
+  position: absolute;
+  width: 0.563em;
+  height: 0.563em;
+  background: -o-radial-gradient(0.25em 0.375em,
+      0.125em circle,
+      red,
+      transparent),
+    -o-radial-gradient(0.375em 0.188em, 0.063em circle, var(--bb8-bg) 50%, transparent 100%),
+    -o-linear-gradient(45deg, #000 0.188em, dimgray 0.313em 0.375em, #000 0.5em);
+  background: -o-radial-gradient(0.25em 0.375em,
+      0.125em circle,
+      red,
+      transparent),
+    -o-radial-gradient(0.375em 0.188em, 0.063em circle, var(--bb8-bg) 50%, transparent 100%),
+    -o-linear-gradient(45deg, #000 0.188em, dimgray 0.313em 0.375em, #000 0.5em);
+  background: -o-radial-gradient(0.25em 0.375em,
+      0.125em circle,
+      red,
+      transparent),
+    -o-radial-gradient(0.375em 0.188em, 0.063em circle, var(--bb8-bg) 50%, transparent 100%),
+    -o-linear-gradient(45deg, #000 0.188em, dimgray 0.313em 0.375em, #000 0.5em);
+  background: -o-radial-gradient(0.25em 0.375em,
+      0.125em circle,
+      red,
+      transparent),
+    -o-radial-gradient(0.375em 0.188em, 0.063em circle, var(--bb8-bg) 50%, transparent 100%),
+    -o-linear-gradient(45deg, #000 0.188em, dimgray 0.313em 0.375em, #000 0.5em);
+  background: radial-gradient(0.125em circle at 0.25em 0.375em,
+      red,
+      transparent),
+    radial-gradient(0.063em circle at 0.375em 0.188em,
+      var(--bb8-bg) 50%,
+      transparent 100%),
+    linear-gradient(45deg, #000 0.188em, dimgray 0.313em 0.375em, #000 0.5em);
+  border-radius: var(--radius);
+  top: 0.413em;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+  -webkit-box-shadow: 0 0 0 0.089em lightgray, 0.563em 0.281em 0 -0.148em,
+    0.563em 0.281em 0 -0.1em var(--bb8-bg), 0.563em 0.281em 0 -0.063em;
+  box-shadow: 0 0 0 0.089em lightgray, 0.563em 0.281em 0 -0.148em,
+    0.563em 0.281em 0 -0.1em var(--bb8-bg), 0.563em 0.281em 0 -0.063em;
+  z-index: 1;
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.bb8__head::after {
+  content: "";
+  position: absolute;
+  bottom: 0.375em;
+  left: 0;
+  width: 100%;
+  height: 0.188em;
+  background: -o-linear-gradient(left,
+      var(--accent) 0.125em,
+      transparent 0.125em 0.188em,
+      var(--accent) 0.188em 0.313em,
+      transparent 0.313em 0.375em,
+      var(--accent) 0.375em 0.938em,
+      transparent 0.938em 1em,
+      var(--accent) 1em 1.125em,
+      transparent 1.125em 1.875em,
+      var(--accent) 1.875em 2em,
+      transparent 2em 2.063em,
+      var(--accent) 2.063em 2.25em,
+      transparent 2.25em 2.313em,
+      var(--accent) 2.313em 2.375em,
+      transparent 2.375em 2.438em,
+      var(--accent) 2.438em);
+  background: -webkit-gradient(linear,
+      left top,
+      right top,
+      color-stop(0.125em, var(--accent)),
+      color-stop(0.125em, transparent),
+      color-stop(0.188em, var(--accent)),
+      color-stop(0.313em, transparent),
+      color-stop(0.375em, var(--accent)),
+      color-stop(0.938em, transparent),
+      color-stop(1em, var(--accent)),
+      color-stop(1.125em, transparent),
+      color-stop(1.875em, var(--accent)),
+      color-stop(2em, transparent),
+      color-stop(2.063em, var(--accent)),
+      color-stop(2.25em, transparent),
+      color-stop(2.313em, var(--accent)),
+      color-stop(2.375em, transparent),
+      color-stop(2.438em, var(--accent)));
+  background: linear-gradient(to right,
+      var(--accent) 0.125em,
+      transparent 0.125em 0.188em,
+      var(--accent) 0.188em 0.313em,
+      transparent 0.313em 0.375em,
+      var(--accent) 0.375em 0.938em,
+      transparent 0.938em 1em,
+      var(--accent) 1em 1.125em,
+      transparent 1.125em 1.875em,
+      var(--accent) 1.875em 2em,
+      transparent 2em 2.063em,
+      var(--accent) 2.063em 2.25em,
+      transparent 2.25em 2.313em,
+      var(--accent) 2.313em 2.375em,
+      transparent 2.375em 2.438em,
+      var(--accent) 2.438em);
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.bb8__antenna {
+  position: absolute;
+  -webkit-transform: translateY(-90%);
+  -ms-transform: translateY(-90%);
+  transform: translateY(-90%);
+  width: 0.059em;
+  border-radius: var(--radius) var(--radius) 0 0;
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.bb8__antenna:nth-child(1) {
+  height: 0.938em;
+  right: 0.938em;
+  background: -o-linear-gradient(#000 0.188em, silver 0.188em);
+  background: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      color-stop(0.188em, #000),
+      color-stop(0.188em, silver));
+  background: linear-gradient(#000 0.188em, silver 0.188em);
+}
+
+.bb8__antenna:nth-child(2) {
+  height: 0.375em;
+  left: 50%;
+  -webkit-transform: translate(-50%, -90%);
+  -ms-transform: translate(-50%, -90%);
+  transform: translate(-50%, -90%);
+  background: silver;
+}
+
+.bb8__body {
+  width: 4.375em;
+  height: 4.375em;
+  background: var(--bb8-bg);
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+  z-index: 1;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background: -webkit-gradient(linear,
+      right top,
+      left top,
+      color-stop(4%, var(--bb8-bg)),
+      color-stop(4%, var(--accent)),
+      color-stop(10%, transparent),
+      color-stop(90%, var(--accent)),
+      color-stop(96%, var(--bb8-bg))),
+    -webkit-gradient(linear, left top, left bottom, color-stop(4%, var(--bb8-bg)), color-stop(4%, var(--accent)), color-stop(10%, transparent), color-stop(90%, var(--accent)), color-stop(96%, var(--bb8-bg))),
+    -webkit-gradient(linear, left top, right top, color-stop(2.156em, transparent), color-stop(2.156em, silver), color-stop(2.188em, transparent)),
+    -webkit-gradient(linear, left top, left bottom, color-stop(2.156em, transparent), color-stop(2.156em, silver), color-stop(2.188em, transparent));
+  background: -o-linear-gradient(right,
+      var(--bb8-bg) 4%,
+      var(--accent) 4% 10%,
+      transparent 10% 90%,
+      var(--accent) 90% 96%,
+      var(--bb8-bg) 96%),
+    -o-linear-gradient(var(--bb8-bg) 4%, var(--accent) 4% 10%, transparent 10% 90%, var(--accent) 90% 96%, var(--bb8-bg) 96%),
+    -o-linear-gradient(left, transparent 2.156em, silver 2.156em 2.219em, transparent 2.188em),
+    -o-linear-gradient(transparent 2.156em, silver 2.156em 2.219em, transparent 2.188em);
+  background: linear-gradient(-90deg,
+      var(--bb8-bg) 4%,
+      var(--accent) 4% 10%,
+      transparent 10% 90%,
+      var(--accent) 90% 96%,
+      var(--bb8-bg) 96%),
+    linear-gradient(var(--bb8-bg) 4%,
+      var(--accent) 4% 10%,
+      transparent 10% 90%,
+      var(--accent) 90% 96%,
+      var(--bb8-bg) 96%),
+    linear-gradient(to right,
+      transparent 2.156em,
+      silver 2.156em 2.219em,
+      transparent 2.188em),
+    linear-gradient(transparent 2.156em,
+      silver 2.156em 2.219em,
+      transparent 2.188em);
+  background-color: var(--bb8-bg);
+}
+
+.bb8__body::after {
+  content: "";
+  bottom: 1.5em;
+  left: 0.563em;
+  position: absolute;
+  width: 0.188em;
+  height: 0.188em;
+  background: rgb(236, 236, 236);
+  color: rgb(236, 236, 236);
   border-radius: 50%;
+  -webkit-box-shadow: 0.875em 0.938em, 0 -1.25em, 0.875em -2.125em,
+    2.125em -2.125em, 3.063em -1.25em, 3.063em 0, 2.125em 0.938em;
+  box-shadow: 0.875em 0.938em, 0 -1.25em, 0.875em -2.125em, 2.125em -2.125em,
+    3.063em -1.25em, 3.063em 0, 2.125em 0.938em;
 }
 
-/* Cambio de posición para el punto del switch */
-input:checked + .slider:before {
-  left: auto;
-  right: 2px;
-  transform: translateX(20px);
+.bb8__body::before {
+  content: "";
+  width: 2.625em;
+  height: 2.625em;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0.1;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 0.313em solid var(--accent);
+  background: -o-radial-gradient(center,
+      1em circle,
+      rgb(236, 236, 236) 50%,
+      transparent 51%),
+    -o-radial-gradient(center, 1.25em circle, var(--bb8-bg) 50%, transparent 51%),
+    -o-linear-gradient(right, transparent 42%, var(--accent) 42% 58%, transparent 58%),
+    -o-linear-gradient(var(--bb8-bg) 42%, var(--accent) 42% 58%, var(--bb8-bg) 58%);
+  background: -o-radial-gradient(center,
+      1em circle,
+      rgb(236, 236, 236) 50%,
+      transparent 51%),
+    -o-radial-gradient(center, 1.25em circle, var(--bb8-bg) 50%, transparent 51%),
+    -o-linear-gradient(right, transparent 42%, var(--accent) 42% 58%, transparent 58%),
+    -o-linear-gradient(var(--bb8-bg) 42%, var(--accent) 42% 58%, var(--bb8-bg) 58%);
+  background: radial-gradient(1em circle at center,
+      rgb(236, 236, 236) 50%,
+      transparent 51%),
+    radial-gradient(1.25em circle at center, var(--bb8-bg) 50%, transparent 51%),
+    -webkit-gradient(linear, right top, left top, color-stop(42%, transparent), color-stop(42%, var(--accent)), color-stop(58%, transparent)),
+    -webkit-gradient(linear, left top, left bottom, color-stop(42%, var(--bb8-bg)), color-stop(42%, var(--accent)), color-stop(58%, var(--bb8-bg)));
+  background: radial-gradient(1em circle at center,
+      rgb(236, 236, 236) 50%,
+      transparent 51%),
+    radial-gradient(1.25em circle at center, var(--bb8-bg) 50%, transparent 51%),
+    linear-gradient(-90deg,
+      transparent 42%,
+      var(--accent) 42% 58%,
+      transparent 58%),
+    linear-gradient(var(--bb8-bg) 42%, var(--accent) 42% 58%, var(--bb8-bg) 58%);
 }
 
-/* Cambio de imagen de bandera para español */
-input:checked + .slider .flag-english {
-  transform: translateX(0);
+.artificial__hidden {
+  position: absolute;
+  border-radius: inherit;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-/* Cambio de imagen de bandera para inglés */
-input:checked + .slider .flag-spanish {
-  transform: translateX(100%);
+.bb8__shadow {
+  content: "";
+  width: var(--bb8-diameter);
+  height: 20%;
+  border-radius: 50%;
+  background: #3a271c;
+  -webkit-box-shadow: 0.313em 0 3.125em #3a271c;
+  box-shadow: 0.313em 0 3.125em #3a271c;
+  opacity: 0.25;
+  position: absolute;
+  bottom: 0;
+  left: calc(var(--toggle-offset) - 0.938em);
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+  -webkit-transform: skew(-70deg);
+  -ms-transform: skew(-70deg);
+  transform: skew(-70deg);
+  z-index: 1;
 }
 
 
-input:not(:checked) + .slider {
-  background-image: url('images/spain.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* actions */
+
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .bb8-toggle__star:nth-child(1) {
+  top: 0.625em;
 }
 
-input:checked + .slider {
-  background-image: url('images/ukFlag.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .bb8-toggle__star:nth-child(2) {
+  top: 1.875em;
 }
 
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .bb8-toggle__star:nth-child(3) {
+  top: 1.25em;
+}
 
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .bb8-toggle__star:nth-child(4) {
+  top: 3.438em;
+}
+
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .bb8-toggle__star:nth-child(5) {
+  top: 3.438em;
+}
+
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .bb8-toggle__star:nth-child(6) {
+  top: 0.313em;
+}
+
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .bb8-toggle__star:nth-child(7) {
+  top: 1.875em;
+}
+
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .bb8-toggle__cloud {
+  right: -100%;
+}
+
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .gomrassen {
+  top: 0.938em;
+}
+
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .hermes {
+  top: 2.5em;
+}
+
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .chenini {
+  top: 2.75em;
+}
+
+.bb8-toggle__checkbox:checked+.bb8-toggle__container {
+  background-position-y: 0;
+}
+
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .tatto-1 {
+  top: 100%;
+}
+
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .tatto-2 {
+  top: 100%;
+}
+
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .bb8 {
+  left: calc(100% - var(--bb8-diameter) - var(--toggle-offset));
+}
+
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .bb8__shadow {
+  left: calc(100% - var(--bb8-diameter) - var(--toggle-offset) + 0.938em);
+  -webkit-transform: skew(70deg);
+  -ms-transform: skew(70deg);
+  transform: skew(70deg);
+}
+
+.bb8-toggle__checkbox:checked+.bb8-toggle__container .bb8__body {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(225deg);
+}
+
+.bb8-toggle__checkbox:hover+.bb8-toggle__container .bb8__head::before {
+  left: 100%;
+}
+
+.bb8-toggle__checkbox:not(:checked):hover+.bb8-toggle__container .bb8__antenna:nth-child(1) {
+  right: 1.5em;
+}
+
+.bb8-toggle__checkbox:hover+.bb8-toggle__container .bb8__antenna:nth-child(2) {
+  left: 0.938em;
+}
+
+.bb8-toggle__checkbox:hover+.bb8-toggle__container .bb8__head::after {
+  background-position: 1.375em 0;
+}
+
+.bb8-toggle__checkbox:checked:hover+.bb8-toggle__container .bb8__head::before {
+  left: 0;
+}
+
+.bb8-toggle__checkbox:checked:hover+.bb8-toggle__container .bb8__antenna:nth-child(2) {
+  left: calc(100% - 0.938em);
+}
+
+.bb8-toggle__checkbox:checked:hover+.bb8-toggle__container .bb8__head::after {
+  background-position: -1.375em 0;
+}
+
+.bb8-toggle__checkbox:active+.bb8-toggle__container .bb8__head-container {
+  -webkit-transform: rotate(25deg);
+  -ms-transform: rotate(25deg);
+  transform: rotate(25deg);
+}
+
+.bb8-toggle__checkbox:checked:active+.bb8-toggle__container .bb8__head-container {
+  -webkit-transform: rotate(-25deg);
+  -ms-transform: rotate(-25deg);
+  transform: rotate(-25deg);
+}
+
+.bb8:hover .bb8__head::before,
+.bb8:hover .bb8__antenna:nth-child(2) {
+  left: 50% !important;
+}
+
+.bb8:hover .bb8__antenna:nth-child(1) {
+  right: 0.938em !important;
+}
+
+.bb8:hover .bb8__head::after {
+  background-position: 0 0 !important;
+}
 
 /* Navbar */
 
 #mainNavigation {
-  padding: 0 3rem;
+  padding: 1rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -136,9 +722,9 @@ input:checked + .slider {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%) !important;
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%)!important;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%) !important;
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%)!important;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%) !important;
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
   /* IE6-9 */
@@ -182,8 +768,8 @@ a.dropdown-item:hover {
 }
 
 
-.active { 
-  color: rgb(44, 42, 42)!important;
+.active {
+  color: rgb(44, 42, 42) !important;
 
 }
 
@@ -215,14 +801,15 @@ section {
   margin-top: 4rem;
 }
 
+
 /* Video Section */
 
-#video {
+#home {
   background-color: transparent;
   text-align: center;
   position: relative;
   max-width: 100%;
-  width: 50%;
+  width: 65%;
   height: auto;
   margin: 11rem auto 0;
 }
@@ -248,14 +835,12 @@ section {
     box-shadow:
       0 0 20px rgba(239, 61, 242, 0.8),
       0 0 20px rgba(39, 69, 242, 0.8);
-    /* Cambia los colores de la sombra */
   }
 
   to {
     box-shadow:
-      0 0 20px rgba(159, 27, 140, 0.8),
-      0 0 20px rgba(39, 69, 242, 0.8);
-    /* Cambia los colores de la sombra */
+      0 0 100px rgba(159, 27, 140, 0.8),
+      0 0 100px rgba(39, 69, 242, 0.8);
   }
 }
 

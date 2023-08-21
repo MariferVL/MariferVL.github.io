@@ -1,5 +1,30 @@
 
-// Language Switch
+
+/* Cursor */
+const customCursor = document.getElementById('laser-cursor');
+const hoverContainer = document.querySelector('.hover-container');
+const updateCursorPosition = (event) => {
+
+  customCursor.style.top = `${event.clientY}px`;
+
+  customCursor.style.left = `${event.clientX}px`;
+
+}
+
+window.addEventListener('mousemove', (event) => {
+
+  updateCursorPosition(event)
+
+  if (hoverContainer.matches(':hover')) {
+    customCursor.classList.add('zoom')
+  } else {
+    customCursor.classList.remove('zoom')
+  }
+})
+
+
+
+/* Language Switch */
 
 const translations = {
     // Objeto con traducciones en español e inglés
@@ -21,7 +46,8 @@ const translations = {
   }
   
 
-// Navbar Functionality
+/* Navbar Functionality */
+
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("#mainNavigation a.nav-link");
 
@@ -45,7 +71,7 @@ function activateMenuAtCurrentSection() {
             sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine;
 
         const sectionId = section.getAttribute('id');
-        const menuElement = document.querySelector(`#mainNavigation a.nav-link[href="#${sectionId}"]`);
+        const menuElement = document.querySelector(`#mainNavigation a.nav-link[href="#${sectionId}"], #mainNavigation a.dropdown-item[href="#${sectionId}"]`);
 
         menuElement.classList.remove('active');
         if (sectionBoundaries) {
@@ -54,3 +80,29 @@ function activateMenuAtCurrentSection() {
     });
 }
 
+/* Scroll Up */
+
+
+let mybutton = document.getElementById("btn-back-to-top");
+
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

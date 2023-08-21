@@ -12,6 +12,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+  
   <link rel="stylesheet" href="styles.css">
   <!-- 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nombre+de+la+Fuente&display=swap">
@@ -38,73 +40,81 @@
   <link rel="canonical" href="https://www.misitio.com">
 </head>
 
-<body>
+<body> 
+  <button type="button" class="btn btn-floating btn-lg" id="btn-back-to-top">
+    <i class="fas fa-angle-double-up"></i>
+    <!-- <i class="fas fa-arrow-alt-circle-up"></i> -->
+  </button>
   <div class="background"></div>
-  <header id="home">
-  
-    <nav id="mainNavigation" class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large" role="navigation">
-      <div class="language-switch">
-        <label class="switch">
-          <input type="checkbox" id="language-toggle">
-          <span class="slider round"></span>
+ 
+  <header>
+    <div class="language-switch">
+      <div class="toggle-container">
+        <span class="language-label">Esp</span>
+        <label class="bb8-toggle">
+          <input id="language-toggle" class="bb8-toggle__checkbox hover-container" type="checkbox">
+          <div class="bb8-toggle__container">
+            <div class="bb8">
+              <div class="bb8__head-container">
+                <div class="bb8__antenna"></div>
+                <div class="bb8__antenna"></div>
+                <div class="bb8__head"></div>
+              </div>
+              <div class="bb8__body"></div>
+            </div>
+            <div class="artificial__hidden">
+              <div class="bb8__shadow"></div>
+            </div>
+          </div>
         </label>
+        <span class="language-label">Eng</span>
       </div>
-      
-      
-      <div class="container-fluid">
+    </div>
+    <nav id="mainNavigation" class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large"
+      role="navigation">
+      <div class="container-fluid hover-container">
         <a class="navbar-brand" href="#home">
           <img src="images/viole.gif" alt="Logo" class="round-logo">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+        <button class="navbar-toggler hover-container" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2"
+          aria-labelledby="offcanvasNavbar2Label">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Offcanvas</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close-white hover-container" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item hover-container">
                 <a class="nav-link active" data-translate="homeNav" aria-current="page" href="#home">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#video">Video</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About Me</a>
-              </li>
-              <li class="nav-item">
+              <li class="nav-item hover-container">
                 <a class="nav-link" href="#life">Life</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#projects">Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#storytelling">Story Telling</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#cv">Resume</a>
-              </li>
-              <li class="nav-item">
+              <li class="nav-item hover-container">
                 <a class="nav-link" href="#contact">Contact</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item hover-container">
                 <a class="nav-link" href="#blog">Blog</a>
               </li>
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+              <li class="nav-item dropdown hover-container">
+                <a class="nav-link dropdown-toggle" href="#about" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  About Me
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li class="hover-container"><a class="dropdown-item" href="#projects">Projects</a></li>
+                  <li class="hover-container"><a class="dropdown-item" href="#storytelling">Story Telling</a></li>
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li class="hover-container"><a class="dropdown-item" href="#cv">Curriculum</a></li>
                 </ul>
-              </li> -->
+              </li>
             </ul>
             <!-- <form class="d-flex mt-3 mt-lg-0" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -116,13 +126,13 @@
     </nav>
   </header>
   <main>
-    <section id="video">
+    <section id="home">
       <div class="video-container">
-        <video controls>
-          <source src="images/Vivir.mp4" type="video/mp4">
-          <track src="subtitulos-esp.vtt" kind="subtitles" srclang="es" label="Español">
-          <source src="video-eng.mp4" type="video/mp4">
-          <track src="subtitulos-eng.vtt" kind="subtitles" srclang="en" label="English">
+        <video class="hover-container" controls>
+          <source class="hover-container" src="images/Vivir.mp4" type="video/mp4">
+          <track class="hover-container" src="subtitulos-esp.vtt" kind="subtitles" srclang="es" label="Español">
+          <source class="hover-container" src="video-eng.mp4" type="video/mp4">
+          <track class="hover-container" src="subtitulos-eng.vtt" kind="subtitles" srclang="en" label="English">
         </video>
       </div>
     </section>
@@ -207,9 +217,15 @@
       </div>
     </div>
   </footer>
+  <div id="laser-cursor"></div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+    integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous">
+    </script>
+
   <script src="./js/app.js"></script>
   <script src="./js/firebase_config.js"></script>
 
