@@ -1,59 +1,56 @@
-window.addEventListener('scroll', onScroll)
 
-onScroll()
+// Language Switch
+
+const translations = {
+    // Objeto con traducciones en español e inglés
+    // Define your translations here
+  };
+  
+  document.getElementById("language-toggle").addEventListener("change", () => {
+    const lang = document.getElementById("language-toggle").checked ? "en" : "es";
+    updateContent(lang);
+  });
+  
+  function updateContent(lang) {
+    const elementsToTranslate = document.querySelectorAll("[data-translate]");
+  
+    elementsToTranslate.forEach(element => {
+      const translationKey = element.getAttribute("data-translate");
+      element.textContent = translations[translationKey][lang];
+    });
+  }
+  
+
+// Navbar Functionality
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("#mainNavigation a.nav-link");
+
+document.addEventListener('scroll', onScroll);
+
 function onScroll() {
-    showNavOnScroll ();
-    showBackToTopButtonOnScroll();
-    activateMenuAtCurrentSection(home);
-}
-function activateMenuAtCurrentSection(section) {
-    const targetLine = scrollY + innerHeight / 2
-
-    // check if the section has passed the line 
-     // what data will I need?
-    const sectionTop = section.offsetTop
-    const sectionHeight = section.offsetHeight
-    const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop
-
-    // check if the base is below the target line
-     // what data will I need?
-    const sectionEndAst = sectionTop + sectionHeight
-
-    const sectionEndPassedTargetLine = sectionEndAst <= targetLine
-
-    console.log('Did the session bottom go over the line?', sectionEndPassedTargetLine)
-
-
-    // section boundaries
-    const sectionBoundaries =
-    sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine
-
-    const sectionId = section.getAttribute('id')
-    const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`)
-
-
-    menuElement.classList.remove('active')
-    if (sectionBoundaries) {
-        menuElement.classList.add('active')
-    }
-
-
+    activateMenuAtCurrentSection();
 }
 
-// This is so that when you scroll down your navigation bar goes out
-function showNavOnScroll() {
-    if (scrollY > 0) {
-        navigation.classList.add('scroll');
-    } else {
-        navigation.classList.remove('scroll');
-    }
+function activateMenuAtCurrentSection() {
+    const targetLine = scrollY + innerHeight / 2;
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop;
+        const sectionEndAt = sectionTop + sectionHeight;
+        const sectionEndPassedTargetLine = sectionEndAt <= targetLine;
+
+        const sectionBoundaries =
+            sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine;
+
+        const sectionId = section.getAttribute('id');
+        const menuElement = document.querySelector(`#mainNavigation a.nav-link[href="#${sectionId}"]`);
+
+        menuElement.classList.remove('active');
+        if (sectionBoundaries) {
+            menuElement.classList.add('active');
+        }
+    });
 }
 
-
-// Will make them appear smooth
-ScrollReveal({
-    origin:'top',
-    distance: '30px',
-    duration: 700,
-}).reveal(`
-    #home`);
