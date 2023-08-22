@@ -12,7 +12,8 @@ html {
 }
 
 body {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Cabin', sans-serif;
+  font-size: 14px;
   cursor: url('images/pointer.png'), auto;
   padding: 2rem;
 }
@@ -38,6 +39,30 @@ input[type="checkbox"],
 #language-toggle,
 .hover-container {
   cursor: url('images/hand-cursor.png'), auto;
+}
+
+.fluorescent-pink {
+  font-weight: bold;
+  color: #EF3DF2;
+  text-shadow: 0 0 10px #EF3DF2, 0 0 20px #7F1B8C, 0 0 30px #350C40, 0 0 40px #1F1426, 0 0 50px #2745F2;
+  transition: text-shadow 0.5s ease-in-out;
+}
+
+.fluorescent-pink:hover {
+  text-shadow: 0 0 15px #EF3DF2, 0 0 25px #7F1B8C, 0 0 35px #350C40, 0 0 45px #1F1426, 0 0 55px #2745F2;
+}
+
+.fluorescent-blue {
+  font-weight: bold;
+  color: #194dfa;
+  text-shadow: 0 0 10px rgba(39, 69, 242, 0.8), 0 0 20px rgba(39, 69, 242, 0.6);
+  filter: brightness(2.5) drop-shadow(0 0 23rem #2745F2);
+  transition: text-shadow 0.5s ease-in-out;
+
+}
+
+.fluorescent-blue:hover {
+  text-shadow: 0 0 10px rgba(39, 69, 242, 0.8), 0 0 20px rgba(39, 69, 242, 0.6);
 }
 
 
@@ -702,14 +727,14 @@ header {
 
 #navbarNavDropdown.collapsing .navbar-nav,
 #navbarNavDropdown.show .navbar-nav {
-  background: #037582;
+  background: 0 0 10px rgba(39, 69, 242, 0.8), 0 0 20px rgba(39, 69, 242, 0.6);
+  filter: brightness(2.5) drop-shadow(0 0 23rem #2745F2);
   padding: 12px;
 }
 
 #mainNavigation a {
   color: #dfdfdf;
   display: inline-block;
-  font-family: 'Cabin', sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -717,21 +742,48 @@ header {
 }
 
 .dropdown-menu {
-  background: #03727d
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: #FFFFFF;
+  background-color: #00104d8c;
+  filter: brightness(993%) drop-shadow(0 0 23rem #f9f9f9ab);
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  border: none;
+  border-top: none;
+  display: none;
 }
+
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 5px 0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-menu li:hover {
+  background-color: #5f06c576;
+}
+
+
 
 a.dropdown-toggle {
   color: #dfdfdf !important
 }
 
 a.dropdown-item:hover {
-  color: #03727d !important
+  background-color: #9406e125 !important;
 }
 
-
-.nav-item a:hover {
-  color: #fff !important;
+hr:hover {
+  background-color: none !important;
 }
+
 
 .nav-item {
   min-width: 8vw;
@@ -744,11 +796,8 @@ a.dropdown-item:hover {
 
 #mainNavigation .navbar-dark.d-flex {
   position: relative;
-  /* Agrega posicionamiento relativo */
   justify-content: space-between;
-  /* Alinea horizontalmente el logo y el botón del menú */
   align-items: center;
-  /* Centra verticalmente el contenido */
 }
 
 .logo-container {
@@ -764,11 +813,30 @@ a.dropdown-item:hover {
 
 .offcanvas-header {
   padding: 3rem 1rem;
-  }
+}
+
+
+/* Scroll Progress Bar */
+
+.progress-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #000;
+  z-index: 9999;
+}
+
+.progress-bar {
+  width: 0;
+  height: 100%;
+  background-image: linear-gradient(to right, #EF3DF2, #7F1B8C, #350C40, #1F1426, #2745F2);
+}
 
 /** Setions **/
 section {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #00000063;
   margin-top: 4rem;
 }
 
@@ -783,12 +851,6 @@ section {
   max-width: 100%;
   height: auto;
   width: 100%;
-
-}
-
-
-#mainNavigation {
-  /* padding: 1rem; */
 
 }
 
@@ -829,7 +891,6 @@ section {
     box-shadow:
       0 0 20px rgba(159, 27, 140, 0.8),
       0 0 20px rgba(39, 69, 242, 0.8);
-    /* Cambia los colores de la sombra */
   }
 }
 
@@ -872,7 +933,8 @@ video {
   transition-duration: .8s;
 }
 
-#bar1,#bar3 {
+#bar1,
+#bar3 {
   width: 70%;
 }
 
@@ -880,7 +942,12 @@ video {
 /* About Me */
 
 h1,
-h2 {
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Orbitron', sans-serif;
   color: white;
   margin-bottom: 1rem;
   padding: 0 1rem;
@@ -902,25 +969,49 @@ span.highlight {
 }
 
 a {
-  color: #2745F2;
   text-decoration: none;
+}
+
+/* Footer */
+
+.nav-link,
+.text-center,
+footer a {
+  font-family: 'Cabin', sans-serif;
+  color: white !important;
+
+}
+
+.link-body-emphasis svg {
+  fill: #ffffff;
+  width: 2em;
+  height: 2em;
+}
+
+.text-sm {
+  font-size: smaller;
+  margin-bottom: 0;
 }
 
 
 
-
-
-
-
-
-/* Media queries para responsividad */
+/* Media queries */
 @media screen and (min-width: 768px) {
-  section {
-    padding: 4rem;
+
+
+  .toggle-container {
+    display: none;
   }
 
   .bb8-toggle {
     font-size: var(--toggle-size);
+  }
+
+  #checkbox {
+    display: none;
+  }
+  .toggle {
+    display: none;
   }
 
   .round-logo {
@@ -933,8 +1024,20 @@ a {
 
   }
 
+  section {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 4rem;
+  }
+
   #home {
     width: 65%;
   }
+
+  .col-md-7 {
+    margin-top: 3rem;
+  }
+
+
+
 
 }

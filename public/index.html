@@ -18,8 +18,8 @@
   <link rel="stylesheet" href="styles.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 
   <link rel="icon" type="image/png" href="favicon.png">
 
@@ -51,40 +51,22 @@
   <div class="background"></div>
 
   <header>
-    <div class="language-switch">
-      <div class="toggle-container">
-        <span class="language-label">Esp</span>
-        <label class="bb8-toggle">
-          <input id="language-toggle" class="bb8-toggle__checkbox" type="checkbox">
-          <div class="bb8-toggle__container">
-            <div class="bb8">
-              <div class="bb8__head-container">
-                <div class="bb8__antenna"></div>
-                <div class="bb8__antenna"></div>
-                <div class="bb8__head"></div>
-              </div>
-              <div class="bb8__body"></div>
-            </div>
-            <div class="artificial__hidden">
-              <div class="bb8__shadow"></div>
-            </div>
-          </div>
-        </label>
-        <span class="language-label">Eng</span>
-      </div>
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="scroll-progress"></div>
     </div>
+
     <nav id="mainNavigation" class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large"
       role="navigation">
       <div class="container-fluid hover-container">
         <a class="navbar-brand" href="#home">
           <img src="images/viole.gif" alt="Logo" class="round-logo">
         </a>
-        <input type="checkbox" id="checkbox" data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+        <input type="checkbox" id="checkbox" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
+          aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
         <label for="checkbox" class="toggle">
-            <div class="bars" id="bar1"></div>
-            <div class="bars" id="bar2"></div>
-            <div class="bars" id="bar3"></div>
+          <div class="bars" id="bar1"></div>
+          <div class="bars" id="bar2"></div>
+          <div class="bars" id="bar3"></div>
         </label>
         <!-- <button class="navbar-toggler hover-container" type="button" data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
@@ -117,6 +99,7 @@
                   About Me
                 </a>
                 <ul class="dropdown-menu">
+                  <li class="hover-container"><a class="dropdown-item" href="#about">About Me</a></li>
                   <li class="hover-container"><a class="dropdown-item" href="#projects">Projects</a></li>
                   <li class="hover-container"><a class="dropdown-item" href="#storytelling">Story Telling</a></li>
                   <li>
@@ -125,7 +108,32 @@
                   <li class="hover-container"><a class="dropdown-item" href="#cv">Curriculum</a></li>
                 </ul>
               </li>
+              <li class="nav-item hover-container">
+                <div class="language-switch">
+                  <div class="toggle-container">
+                    <span class="language-label">Esp</span>
+                    <label class="bb8-toggle">
+                      <input id="language-toggle" class="bb8-toggle__checkbox" type="checkbox">
+                      <div class="bb8-toggle__container">
+                        <div class="bb8">
+                          <div class="bb8__head-container">
+                            <div class="bb8__antenna"></div>
+                            <div class="bb8__antenna"></div>
+                            <div class="bb8__head"></div>
+                          </div>
+                          <div class="bb8__body"></div>
+                        </div>
+                        <div class="artificial__hidden">
+                          <div class="bb8__shadow"></div>
+                        </div>
+                      </div>
+                    </label>
+                    <span class="language-label">Eng</span>
+                  </div>
+                </div>
+              </li>
             </ul>
+            
             <!-- <form class="d-flex mt-3 mt-lg-0" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
@@ -152,13 +160,14 @@
           <h2 class="featurette-heading fw-normal lh-1">About Me</h2>
           <p>
             ¡Saludos, visitantes del futuro!<br>
-            
+            Soy <span class="fluorescent-blue">María-Fernanda Villalobos</span> aka <span
+              class="fluorescent-pink">Marifer</span>.<br>
             Bienvenidos a mi espacio virtual, donde un ser tecnológico como yo se mezcla con líneas de código y
             creatividad. Mi viaje comenzó en el mundo de la salud, pero mi pasión por la tecnología me llevó a explorar
             las maravillas del desarrollo de software.<br>
 
             Después de incontables líneas de código y travesías por el vasto mundo del desarrollo web y móvil, aquí
-            estoy, lista para enfrentar desafíos futuristas. Mi misión: transformar ideas en experiencias digitales
+            estoy, lista para enfrentar desafíos futuristas.<br> Mi misión: transformar ideas en experiencias digitales
             asombrosas.<br>
 
             ¡Vamos a codificar el mañana juntos!
@@ -205,60 +214,52 @@
 
     </section>
   </main>
-  <footer class="container py-5">
-    <div class="row">
-      <div class="col-12 col-md">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-          stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
-          viewBox="0 0 24 24">
-          <title>Product</title>
-          <circle cx="12" cy="12" r="10" />
-          <path
-            d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
-        </svg>
-        <small class="d-block mb-3 text-body-secondary">&copy; 2017–2023</small>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Features</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary text-decoration-none" href="#">Business</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Education</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Government</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Gaming</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>About</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary text-decoration-none" href="#">Team</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-  <div id="laser-cursor"></div>
+
+  <div class="container">
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+      </ul>
+      <p class="text-center text-body-secondary">Stay in Touch</p>
+      <ul class="justify-content-center list-unstyled d-flex">
+        <li class="ms-3"><a class="link-body-emphasis" href="https://github.com/MariferVL" target="_blank"
+            rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="2em" width="2em"
+              viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+            </svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="https://www.linkedin.com/in/marifervl/" target="_blank"
+            rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="2em" width="2em"
+              viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
+            </svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="https://www.instagram.com/melodicfenix/" target="_blank"
+            rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="2em" width="2em"
+              viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+            </svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="https://twitter.com/marifer_vl" target="_blank"
+            rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="2em" width="2em"
+              viewBox="0 0 512 512">
+              <path
+                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                style="fill: #ffffff;" />
+            </svg>
+          </a></li>
+      </ul>
+      <p class="text-center text-sm">&copy; 2023 Company, Inc This </p>
+      <p class="text-center text-sm">This template is made with 💜 by <a href="http://marifer.web.app" target="_blank"
+          rel="noopener noreferrer">marifer.web.app</a></p>
+
+    </footer>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
