@@ -80,6 +80,22 @@ function activateMenuAtCurrentSection() {
     });
 }
 
+
+/* Scroll Progress Bar */
+
+const progressBar = document.getElementById('scroll-progress');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.body.clientHeight;
+
+  const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+  progressBar.style.width = `${scrollPercentage}%`;
+});
+
+
+
 /* Scroll Up */
 
 
