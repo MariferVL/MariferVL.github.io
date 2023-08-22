@@ -38,7 +38,7 @@ h4,
 h5,
 h6 {
   font-family: 'Orbitron', sans-serif;
-  color: white;
+  color: white !important;
   margin-bottom: 1rem;
   padding: 0 1rem;
 }
@@ -973,6 +973,45 @@ span.highlight {
 a {
   text-decoration: none;
 }
+
+/* Tech Stack */
+
+
+.tech svg{
+  filter: brightness(0) invert(1);
+  width: 2em !important;
+  height: 2em !important;
+}
+
+.tech img{
+  filter: brightness(0) invert(1);
+  width: 1em !important;
+}
+
+.technology {
+  font-size: 24px;
+  font-weight: bold;
+  color: #EF3DF2; 
+  text-shadow:
+    0 0 10px #EF3DF2,
+    0 0 20px #EF3DF2,
+    0 0 30px #EF3DF2,
+    0 0 40px #EF3DF2,
+    0 0 50px #7F1B8C,
+    0 0 60px #7F1B8C,
+    0 0 70px #7F1B8C;
+}
+
+.tech p {
+  fill: #ffffff;
+  font-size: 1rem;
+  text-align: left;
+}
+
+#tech.col:hover {
+  transform: scale(1.05); 
+}
+
 
 /* Footer */
 
