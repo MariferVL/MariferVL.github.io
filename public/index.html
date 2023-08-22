@@ -54,7 +54,28 @@
     <div class="progress-bar-container">
       <div class="progress-bar" id="scroll-progress"></div>
     </div>
-
+    <div class="language-switch">
+      <div class="toggle-container">
+        <span class="language-label">Esp</span>
+        <label class="bb8-toggle">
+          <input id="language-toggle" class="bb8-toggle__checkbox" type="checkbox">
+          <div class="bb8-toggle__container">
+            <div class="bb8">
+              <div class="bb8__head-container">
+                <div class="bb8__antenna"></div>
+                <div class="bb8__antenna"></div>
+                <div class="bb8__head"></div>
+              </div>
+              <div class="bb8__body"></div>
+            </div>
+            <div class="artificial__hidden">
+              <div class="bb8__shadow"></div>
+            </div>
+          </div>
+        </label>
+        <span class="language-label">Eng</span>
+      </div>
+    </div>
     <nav id="mainNavigation" class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large"
       role="navigation">
       <div class="container-fluid hover-container">
@@ -84,15 +105,6 @@
               <li class="nav-item hover-container">
                 <a class="nav-link active" data-translate="homeNav" aria-current="page" href="#home">Home</a>
               </li>
-              <li class="nav-item hover-container">
-                <a class="nav-link" href="#life">Life</a>
-              </li>
-              <li class="nav-item hover-container">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
-              <li class="nav-item hover-container">
-                <a class="nav-link" href="#blog">Blog</a>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#about" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
@@ -100,6 +112,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li class="hover-container"><a class="dropdown-item" href="#about">About Me</a></li>
+                  <li class="hover-container"><a class="dropdown-item" href="#tech">Tech Stack</a></li>
                   <li class="hover-container"><a class="dropdown-item" href="#projects">Projects</a></li>
                   <li class="hover-container"><a class="dropdown-item" href="#storytelling">Story Telling</a></li>
                   <li>
@@ -109,31 +122,15 @@
                 </ul>
               </li>
               <li class="nav-item hover-container">
-                <div class="language-switch">
-                  <div class="toggle-container">
-                    <span class="language-label">Esp</span>
-                    <label class="bb8-toggle">
-                      <input id="language-toggle" class="bb8-toggle__checkbox" type="checkbox">
-                      <div class="bb8-toggle__container">
-                        <div class="bb8">
-                          <div class="bb8__head-container">
-                            <div class="bb8__antenna"></div>
-                            <div class="bb8__antenna"></div>
-                            <div class="bb8__head"></div>
-                          </div>
-                          <div class="bb8__body"></div>
-                        </div>
-                        <div class="artificial__hidden">
-                          <div class="bb8__shadow"></div>
-                        </div>
-                      </div>
-                    </label>
-                    <span class="language-label">Eng</span>
-                  </div>
-                </div>
+                <a class="nav-link" href="#life">Life</a>
               </li>
+              <!-- <li class="nav-item hover-container">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+              <li class="nav-item hover-container">
+                <a class="nav-link" href="#blog">Blog</a>
+              </li> -->
             </ul>
-            
             <!-- <form class="d-flex mt-3 mt-lg-0" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
@@ -156,28 +153,32 @@
     </section>
     <section id="about">
       <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">About Me</h2>
-          <p>
-            ¡Saludos, visitantes del futuro!<br>
-            Soy <span class="fluorescent-blue">María-Fernanda Villalobos</span> aka <span
-              class="fluorescent-pink">Marifer</span>.<br>
-            Bienvenidos a mi espacio virtual, donde un ser tecnológico como yo se mezcla con líneas de código y
-            creatividad. Mi viaje comenzó en el mundo de la salud, pero mi pasión por la tecnología me llevó a explorar
-            las maravillas del desarrollo de software.<br>
+        <div class="col-md-8">
+          <article class="art-left">
+            <h2 class="featurette-heading fw-normal lh-1">About Me</h2>
+            <p>
+              ¡Saludos, visitantes del futuro!<br>
+              Soy <span class="fluorescent-blue">María-Fernanda Villalobos</span> aka <span
+                class="fluorescent-pink">Marifer</span>.<br>
+              Bienvenidos a mi espacio virtual, donde un ser tecnológico como yo se mezcla con líneas de código y
+              creatividad. Mi viaje comenzó en el mundo de la salud, pero mi pasión por la tecnología me llevó a
+              explorar
+              las maravillas del desarrollo de software.<br>
 
-            Después de incontables líneas de código y travesías por el vasto mundo del desarrollo web y móvil, aquí
-            estoy, lista para enfrentar desafíos futuristas.<br> Mi misión: transformar ideas en experiencias digitales
-            asombrosas.<br>
+              Después de incontables líneas de código y travesías por el vasto mundo del desarrollo web y móvil, aquí
+              estoy, lista para enfrentar desafíos futuristas.<br> Mi misión: transformar ideas en experiencias
+              digitales
+              asombrosas.<br>
 
-            ¡Vamos a codificar el mañana juntos!
+              ¡Vamos a codificar el mañana juntos!
 
-            <!-- ¡Hola! Soy <span class="highlight">María-Fernanda</span> -->
-          </p>
+              <!-- ¡Hola! Soy <span class="highlight">María-Fernanda</span> -->
+            </p>
+          </article>
         </div>
-        <div class="col-md-5">
-          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-            height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+        <div class="col-md-4">
+          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300"
+            height="500"  role="img" aria-label="Marifer"
             preserveAspectRatio="xMidYMid slice" focusable="false">
             <title>Marifer</title>
             <rect />
@@ -189,9 +190,69 @@
 
 
     </section>
-    <section id="life">
-      <!-- Contenido sobre tu vida y gustos -->
-
+    <section id="tech">
+      <div class="container px-4 py-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom">Icon grid</h2>
+    
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+              <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"/></svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+              <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"/></svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+              <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#home"/></svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+              <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer2"/></svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+              <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#toggles2"/></svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+              <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#geo-fill"/></svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+              <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#tools"/></svg>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+              <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section id="projects">
       <!-- Tus proyectos en frontend, Python y UX Design -->
@@ -205,14 +266,35 @@
       <!-- Enlaces a tu CV en inglés y español -->
 
     </section>
-    <section id="contact">
-      <!-- Información de contacto -->
+    <section id="life">
+      <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
+              height="500" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <article>
+              <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Responsive left-aligned hero with image</h1>
+              <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s
+                most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system,
+                extensive prebuilt components, and powerful JavaScript plugins.</p>
+
+              <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section id="contact">
 
     </section>
     <section id="blog">
-      <!-- Blog -->
 
-    </section>
+    </section> -->
   </main>
 
   <div class="container">

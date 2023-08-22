@@ -31,6 +31,17 @@ body {
   z-index: -1;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
 
 a,
 button,
@@ -115,7 +126,6 @@ header {
 
 /* Languages */
 
-/* Estilos para el switch de idioma */
 .language-switch {
   position: absolute;
   top: 20px;
@@ -123,7 +133,6 @@ header {
   z-index: 1000;
 }
 
-/* Contenedor del toggle */
 .toggle-container {
   display: flex;
   align-items: center;
@@ -131,7 +140,6 @@ header {
   color: white;
 }
 
-/* Alinear verticalmente las labels con el toggle */
 .language-label {
   margin: 0 5px;
   font-size: 14px;
@@ -708,6 +716,39 @@ header {
 
 /* Navbar */
 
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: .5s;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(176, 92, 255);
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: .8s;
+}
+
+#bar1,
+#bar3 {
+  width: 70%;
+}
+
 #mainNavigation {
   padding: 2rem 1rem;
   position: fixed;
@@ -905,53 +946,14 @@ video {
   border: none;
 }
 
-#checkbox {
-  display: none;
-}
-
-.toggle {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition-duration: .5s;
-}
-
-.bars {
-  width: 100%;
-  height: 4px;
-  background-color: rgb(176, 92, 255);
-  border-radius: 4px;
-}
-
-#bar2 {
-  transition-duration: .8s;
-}
-
-#bar1,
-#bar3 {
-  width: 70%;
-}
 
 
 /* About Me */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Orbitron', sans-serif;
-  color: white;
-  margin-bottom: 1rem;
-  padding: 0 1rem;
+.art-left {
+  padding: 1rem 3rem;
 }
+
 
 p {
   font-size: 1.2rem;
@@ -998,11 +1000,6 @@ footer a {
 /* Media queries */
 @media screen and (min-width: 768px) {
 
-
-  .toggle-container {
-    display: none;
-  }
-
   .bb8-toggle {
     font-size: var(--toggle-size);
   }
@@ -1010,6 +1007,7 @@ footer a {
   #checkbox {
     display: none;
   }
+
   .toggle {
     display: none;
   }
