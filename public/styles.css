@@ -832,7 +832,6 @@ hr:hover {
 
 .show {
   color: rgb(44, 42, 42) !important;
-
 }
 
 #mainNavigation .navbar-dark.d-flex {
@@ -1158,6 +1157,83 @@ a {
   width: 2rem;
   height: 2rem;
   fill: #00ffcc; 
+}
+
+
+/* Contact */
+
+#contact {
+  padding: 4rem 0 2rem;
+}
+
+.contact-container {
+  margin: 4rem auto;
+  width: 65%;
+}
+
+
+.form-input::placeholder {
+  font-size: 1.5rem;
+  color: #7F1B8C;
+}
+
+.form-input, #contact textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #EF3DF2;
+  padding: 10px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.form-input:focus,
+#contact textarea:focus {
+  outline: none;
+  border-color: #7F1B8C;
+}
+
+
+.form-group {
+  position: relative;
+}
+
+.form-label {
+  display: none;
+  font-size: 1rem;
+  text-align: left;
+  color: #7F1B8C;
+}
+
+#contact button {
+  background-color: #350C40;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#contact button:hover {
+  background-color: #1F1426;
+}
+
+
+.form-input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #EF3DF2;
+  padding: 10px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.form-input:focus + .form-label {
+  transform: translateY(0) scale(0.8);
+}
+
+.form-input:valid + .form-label {
+  transform: translateY(0) scale(0.8);
 }
 
 

@@ -125,10 +125,10 @@
               <li class="nav-item hover-container">
                 <a class="nav-link" href="#life">Life</a>
               </li>
-              <!-- <li class="nav-item hover-container">
+              <li class="nav-item hover-container">
                 <a class="nav-link" href="#contact">Contact</a>
               </li>
-              <li class="nav-item hover-container">
+              <!-- <li class="nav-item hover-container">
                 <a class="nav-link" href="#blog">Blog</a>
               </li> -->
             </ul>
@@ -192,7 +192,7 @@
     </section>
 
     <section id="tech">
-      <div class="container px-4 py-5" id="icon-grid">
+      <div class="container px-4 py-5">
         <h2 class="pb-2 border-bottom text-white">Tech Stack</h2>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
@@ -412,7 +412,7 @@
 
 
     <section id="projects" class="projects">
-      <h2 class="pb-2 border-bottom">Custom cards</h2>
+      <h2 class="pb-2 border-bottom">Proyectos</h2>
 
       <!-- Tab buttons -->
       <div class="tab-buttons">
@@ -718,12 +718,31 @@
         </div>
       </div>
     </section>
-    <!-- <section id="contact">
-
+    <section id="contact">
+      <h2 class="pb-2 border-bottom text-white">Contacto</h2>
+      <div class="contact-container">
+        <form action="mailto:marifervl.dev@gmail.com" method="post" enctype="text/plain">
+          <!-- Dentro de tu formulario -->
+          <div class="form-group">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" id="name" name="name" placeholder="Nombre" required class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="Correo Electrónico" required class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Mensaje</label>
+            <textarea id="message" name="message" rows="4" placeholder="Mensaje" required class="form-input"></textarea>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
     </section>
+<!-- 
     <section id="blog">
 
-    </section> -->
+    </section>  -->
   </main>
 
   <div class="container">
