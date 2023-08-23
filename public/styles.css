@@ -830,7 +830,7 @@ hr:hover {
   min-width: 8vw;
 }
 
-.active {
+.show {
   color: rgb(44, 42, 42) !important;
 
 }
@@ -1011,6 +1011,167 @@ a {
 #tech.col:hover {
   transform: scale(1.05); 
 }
+
+
+/* Projects */
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.tab-button {
+  background: transparent;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  color: #EF3DF2;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+  position: relative;
+}
+
+.tab-button.active {
+  color: #7F1B8C;
+  border-bottom: 2px solid #7F1B8C;
+}
+
+.tab-button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: transparent;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.tab-button:hover::before,
+.tab-button.active::before {
+  background: #EF3DF2;
+  transform: scaleX(1);
+}
+
+.category {
+  display: none;
+}
+
+.category.active {
+  display: block;
+}
+
+.category.active .card-container {
+  animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.card-container {
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%; 
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+
+.card-front img,
+.card-back img{
+  border-radius: 24px; 
+}
+
+
+.card-front {
+  background-size: cover;
+  
+}
+
+
+.card-back {
+  background-size: cover;
+  background-image: url('./images/projects/outsyB.png'); 
+  transform: rotateY(180deg); 
+}
+
+.card-back a {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-back svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #00ffcc; 
+}
+
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+
+.card-button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-button svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #00ffcc; 
+}
+
 
 
 /* Footer */
