@@ -1,24 +1,23 @@
 /* Language Switch */
 
 const translations = {
-    // Objeto con traducciones en español e inglés
-    // Define your translations here
-  };
-  
-  document.getElementById("language-toggle").addEventListener("change", () => {
-    const lang = document.getElementById("language-toggle").checked ? "en" : "es";
-    updateContent(lang);
+
+};
+
+document.getElementById("language-toggle").addEventListener("change", () => {
+  const lang = document.getElementById("language-toggle").checked ? "en" : "es";
+  updateContent(lang);
+});
+
+function updateContent(lang) {
+  const elementsToTranslate = document.querySelectorAll("[data-translate]");
+
+  elementsToTranslate.forEach(element => {
+    const translationKey = element.getAttribute("data-translate");
+    element.textContent = translations[translationKey][lang];
   });
-  
-  function updateContent(lang) {
-    const elementsToTranslate = document.querySelectorAll("[data-translate]");
-  
-    elementsToTranslate.forEach(element => {
-      const translationKey = element.getAttribute("data-translate");
-      element.textContent = translations[translationKey][lang];
-    });
-  }
-  
+}
+
 
 /* Navbar Functionality */
 
@@ -28,30 +27,30 @@ const navLinks = document.querySelectorAll("#mainNavigation a.nav-link");
 document.addEventListener('scroll', onScroll);
 
 function onScroll() {
-    activateMenuAtCurrentSection();
+  activateMenuAtCurrentSection();
 }
 
 function activateMenuAtCurrentSection() {
-    const targetLine = scrollY + innerHeight / 2;
+  const targetLine = scrollY + innerHeight / 2;
 
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop;
-        const sectionEndAt = sectionTop + sectionHeight;
-        const sectionEndPassedTargetLine = sectionEndAt <= targetLine;
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop;
+    const sectionEndAt = sectionTop + sectionHeight;
+    const sectionEndPassedTargetLine = sectionEndAt <= targetLine;
 
-        const sectionBoundaries =
-            sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine;
+    const sectionBoundaries =
+      sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine;
 
-        const sectionId = section.getAttribute('id');
-        const menuElement = document.querySelector(`#mainNavigation a.nav-link[href="#${sectionId}"], #mainNavigation a.dropdown-item[href="#${sectionId}"]`);
+    const sectionId = section.getAttribute('id');
+    const menuElement = document.querySelector(`#mainNavigation a.nav-link[href="#${sectionId}"], #mainNavigation a.dropdown-item[href="#${sectionId}"]`);
 
-        menuElement.classList.remove('active');
-        if (sectionBoundaries) {
-            menuElement.classList.add('active');
-        }
-    });
+    menuElement.classList.remove('show');
+    if (sectionBoundaries) {
+      menuElement.classList.add('show');
+    }
+  });
 }
 
 
@@ -100,17 +99,41 @@ function backToTop() {
 
 /* Projects Section Tabs */
 
-  const tabButtons = document.querySelectorAll('.tab-button');
-  const categories = document.querySelectorAll('.category');
+const tabButtons = document.querySelectorAll('.tab-button');
+const categories = document.querySelectorAll('.category');
 
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
 
-      categories.forEach(category => category.classList.remove('active'));
+    categories.forEach(category => category.classList.remove('active'));
 
-      const categoryToShow = button.getAttribute('data-category');
-      document.querySelector(`.category.${categoryToShow}`).classList.add('active');
-    });
+    const categoryToShow = button.getAttribute('data-category');
+    document.querySelector(`.category.${categoryToShow}`).classList.add('active');
   });
+});
+
+
+
+/* Contact Form */
+
+const formInputs = document.querySelectorAll('.form-input');
+
+formInputs.forEach((input, index) => {
+  input.addEventListener('focus', () => {
+    const label = input.previousElementSibling;
+    label.style.display = 'block';
+    input.removeAttribute('placeholder')
+  });
+
+  input.addEventListener('blur', () => {
+    const label = input.previousElementSibling;
+    if (input.value === '') {
+      input.placeholder = label.textContent;
+      label.style.display = 'none';
+
+    }
+  });
+});
+
