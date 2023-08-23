@@ -96,3 +96,21 @@ function backToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+
+/* Projects Section Tabs */
+
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const categories = document.querySelectorAll('.category');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      categories.forEach(category => category.classList.remove('active'));
+
+      const categoryToShow = button.getAttribute('data-category');
+      document.querySelector(`.category.${categoryToShow}`).classList.add('active');
+    });
+  });
