@@ -78,7 +78,8 @@ header {
   text-shadow: 0 0 15px #EF3DF2, 0 0 25px #7F1B8C, 0 0 35px #350C40, 0 0 45px #1F1426, 0 0 55px #2745F2;
 }
 
-.fluorescent-blue, .tab-button:hover {
+.fluorescent-blue,
+.tab-button:hover {
   font-weight: bold;
   color: #194dfa;
   text-shadow: 0 0 1rem rgba(39, 69, 242, 0.8), 0 0 20px rgba(39, 69, 242, 0.6);
@@ -777,7 +778,7 @@ span.highlight {
 .technology {
   font-size: 24px;
   font-weight: bolder;
-  }
+}
 
 .skill-client-side {
   color: #EF3DF2;
@@ -802,8 +803,9 @@ span.highlight {
 
 /* Projects */
 
+
 .tab-buttons {
-  padding: 3rem 10rem 0;
+  padding: 3rem 1rem 0;
 }
 
 .tab-button {
@@ -811,7 +813,7 @@ span.highlight {
   border: none;
   padding: 10px 20px;
   margin: 0 10px;
-  color: #2745F2; 
+  color: #2745F2;
   font-family: "Orbitron", sans-serif;
   font-size: 16px;
   font-weight: bold;
@@ -821,8 +823,8 @@ span.highlight {
 }
 
 .tab-button.active {
-  color:  #001173;
-  border-bottom: 2px solid  #001173;
+  color: #001173;
+  border-bottom: 2px solid #001173;
 }
 
 .tab-button::before {
@@ -840,7 +842,7 @@ span.highlight {
 
 .tab-button:hover::before,
 .tab-button.active::before {
-  background: #2745F2; 
+  background: #2745F2;
   transform: scaleX(1);
 }
 
@@ -984,7 +986,6 @@ span.highlight {
 #projects p {
   text-align: center;
   position: absolute;
-  font-family: "Playfair Display";
 }
 
 .title {
@@ -996,12 +997,18 @@ span.highlight {
 
 .para {
   bottom: 0;
-  font-size: 16px;
-  font-family: "Raleway";
-  padding: 20px;
+  font-size: 1rem;
+  padding: 0 2rem 1rem;
   margin: 0;
   text-align: center;
 }
+
+/* .panel a {
+  bottom: 0;
+  padding: 0.8rem;
+  margin: 0;
+  text-align: center;
+} */
 
 .border {
   position: absolute;
@@ -1009,7 +1016,7 @@ span.highlight {
   height: 13rem;
   transition: border 1s;
   overflow: hidden;
-  border: 2px solid rgba(239, 61, 242, 0.5); 
+  border: 2px solid rgba(239, 61, 242, 0.5);
 }
 
 .slide {
@@ -1023,16 +1030,18 @@ span.highlight {
   flex-direction: column;
 }
 
-.fa-plane {
-  font-size: 16px;
+.icon {
+  font-size: 1rem;
+  color: white;
 }
 
 
 
 /* Resumes */
 
+
 #resume {
-  padding: 3rem 11rem;
+  padding: 3rem 1rem;
 }
 
 .resume-text {
@@ -1079,6 +1088,11 @@ span.highlight {
 }
 
 /* Life */
+
+
+#life .col-10 {
+  width: auto;
+}
 
 summary {
   font-size: 1.1rem;
@@ -1214,13 +1228,28 @@ details[open] summary~* {
   transform: translateY(0) scale(0.8);
 }
 
+
+
 /* Footer */
+
+
 .nav-link,
 .text-center,
 footer a {
   font-family: "Cabin", sans-serif;
   color: white !important;
+  letter-spacing: 2px;
+
 }
+
+footer p {
+  margin: 0.3rem auto;
+}
+
+footer ul {
+  margin: 2rem auto;
+}
+
 
 .link-body-emphasis svg {
   fill: #ffffff;
@@ -1304,6 +1333,15 @@ footer a {
     padding: 2.2rem;
   }
 
+
+  .tab-buttons {
+    padding: 3rem 10rem 0;
+  }
+
+  #resume {
+    padding: 3rem 11rem;
+  }
+
   .resume-text {
     margin: 20px 0;
     font-size: 18px;
@@ -1323,8 +1361,8 @@ footer a {
 
 
   #contact {
-    padding: 4rem 11rem 3rem; 
-   }
+    padding: 4rem 11rem 3rem;
+  }
 
   .contact-container {
     margin: 4rem auto;
@@ -1335,11 +1373,11 @@ footer a {
     font-size: 0.8rem;
     padding: 1rem 0.8rem;
   }
-  
+
   .col-xxl-12 {
     padding: 0 !important;
   }
-  
+
   .col-10 {
     padding: 3rem 0;
   }
