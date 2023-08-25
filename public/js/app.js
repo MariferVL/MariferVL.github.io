@@ -96,6 +96,21 @@ function backToTop() {
   document.documentElement.scrollTop = 0;
 }
 
+/* Mobile navbar */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuLinks = document.querySelectorAll('#offcanvasNavbar2 .nav-link, #offcanvasNavbar2 .dropdown-item');
+  const offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasNavbar2'));
+  
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (!link.classList.contains('dropdown-toggle')) {
+        offcanvas.hide();
+      }
+    });
+  });
+});
+
 
 /* Projects Section Tabs */
 
