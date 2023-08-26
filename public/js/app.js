@@ -110,7 +110,8 @@ function backToTop() {
 document.addEventListener("DOMContentLoaded", function () {
   const menuLinks = document.querySelectorAll('#offcanvasNavbar2 .nav-link, #offcanvasNavbar2 .dropdown-item');
   const offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasNavbar2'));
-  
+
+
   menuLinks.forEach(link => {
     link.addEventListener('click', () => {
       if (!link.classList.contains('dropdown-toggle')) {
@@ -118,8 +119,22 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+ 
+
 });
 
+const checkbox = document.getElementById("checkbox");
+const menuToggle = document.getElementById("menu");
+
+checkbox.addEventListener("change", function() {
+  menuToggle.style.display = checkbox.checked ? "none" : "flex";
+});
+
+document.getElementById("closeNavBtn").addEventListener("click", function() {
+  checkbox.checked = false;
+  menuToggle.style.display = "flex";
+});
 
 /* Projects Section Tabs */
 
