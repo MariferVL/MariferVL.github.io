@@ -1,3 +1,12 @@
+/* Loading */
+
+function hideLoading() {
+  var loadingDiv = document.getElementById('loadingDiv');
+  loadingDiv.style.display = 'none';
+}
+
+window.addEventListener('load', hideLoading);
+
 /* Language Switch */
 
 const translations = {
@@ -22,7 +31,6 @@ function updateContent(lang) {
 /* Navbar Functionality */
 
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("#mainNavigation a.nav-link");
 
 document.addEventListener('scroll', onScroll);
 
@@ -95,6 +103,7 @@ function backToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
 
 /* Mobile navbar */
 
