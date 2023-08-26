@@ -123,7 +123,7 @@ header {
   cursor: var(--toggle-bg);
   filter: brightness(2.5) drop-shadow(0 0 23rem #2745F2);
   color: #2745F2;
-  transition: filter 0.3s ease-in-out, color 0.3s ease-in-out, width  0.3s ease-in-out, height 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  transition: filter 0.3s ease-in-out, color 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out, font-size 0.3s ease-in-out;
 }
 
 #btn-back-to-top i {
@@ -131,9 +131,10 @@ header {
   z-index: 2;
 }
 
-#btn-back-to-top:hover, #btn-back-to-top i:hover {
+#btn-back-to-top:hover,
+#btn-back-to-top i:hover {
   color: #0088f7;
-  text-shadow: 0 0 10px rgba(25, 77, 250, 0.7); 
+  text-shadow: 0 0 3rem rgba(25, 77, 250, 0.7);
   width: 3.3rem;
   height: 3.3rem;
   font-size: 1.8rem;
@@ -1397,12 +1398,19 @@ footer ul {
 
   #about p {
     margin-bottom: 2rem;
-    font-size: 0.888rem;
+    font-size: 1rem;
   }
 
-  .art-left {
-    padding: 1rem 3rem;
+  .fluorescent-blue,
+  .fluorescent-pink {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
   }
+
+
+  .art-left {
+    padding: 1rem 1.3rem; 
+   }
 
   .tech svg {
     width: 2em !important;
@@ -1501,7 +1509,7 @@ footer ul {
 
   p.text-center:nth-child(2) {
     font-size: 1.33rem;
-    }
+  }
 }
 
 
