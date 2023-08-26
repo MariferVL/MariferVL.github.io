@@ -123,12 +123,20 @@ header {
   cursor: var(--toggle-bg);
   filter: brightness(2.5) drop-shadow(0 0 23rem #2745F2);
   color: #2745F2;
-  transition: filter 0.3s ease-in-out;
+  transition: filter 0.3s ease-in-out, color 0.3s ease-in-out, width  0.3s ease-in-out, height 0.3s ease-in-out, font-size 0.3s ease-in-out;
 }
 
 #btn-back-to-top i {
   position: relative;
   z-index: 2;
+}
+
+#btn-back-to-top:hover, #btn-back-to-top i:hover {
+  color: #0088f7;
+  text-shadow: 0 0 10px rgba(25, 77, 250, 0.7); 
+  width: 3.3rem;
+  height: 3.3rem;
+  font-size: 1.8rem;
 }
 
 #btn-back-to-top::before {
@@ -635,7 +643,7 @@ header {
 
 #mainNavigation a:hover,
 footer a:hover {
-  color: #65e1ff;
+  color: #65e1ff !important;
   font-size: 1.1rem;
 }
 
