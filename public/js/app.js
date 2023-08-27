@@ -136,10 +136,51 @@ document.getElementById("closeNavBtn").addEventListener("click", function() {
   menuToggle.style.display = "flex";
 });
 
+
+/* Home Title */
+
+const changingWords = ["Innovadora", "Colaboradora", "Inquisitiva", "FullStack Developer"];
+const changingWord = document.querySelector('.changing-word');
+
+let index = 0;
+let letterIndex = 0;
+let isDeleting = false;
+
+function change() {
+  const currentWord = changingWords[index];
+
+  if (!isDeleting) {
+    changingWord.textContent = currentWord.slice(0, letterIndex);
+    letterIndex++;
+
+    if (letterIndex > currentWord.length) {
+      setTimeout(() => {
+        isDeleting = true;
+      }, 2000);
+    }
+  } else {
+    changingWord.textContent = currentWord.slice(0, letterIndex);
+    letterIndex--;
+
+    if (letterIndex === 0) {
+      isDeleting = false;
+      index = (index + 1) % changingWords.length;
+      setTimeout(() => {
+        isDeleting = false;
+      }, 2000);
+    }
+  }
+}
+
+setInterval(change, 150);
+
+
+
 /* Projects Section Tabs */
 
 const tabButtons = document.querySelectorAll('.tab-button');
 const categories = document.querySelectorAll('.category');
+
 
 tabButtons.forEach(button => {
   button.addEventListener('click', () => {
