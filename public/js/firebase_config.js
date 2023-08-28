@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
+import { getAnalytics, logEvent } from "firebase/analytics";
 import { getPerformance } from 'firebase/performance';
 import { onLCP, onFID, onCLS } from 'web-vitals';
 
@@ -18,16 +18,22 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const perf = getPerformance(app);
 
+
+/* Analytics */
+
+logEvent(analytics, 'notification_received');
+
+
+/* Performance */
+
 onCLS(metric => {
   perf.trace('onCLS').putMetric('value', metric.value);
 });
 
-// Instrument onFID
 onFID(metric => {
   perf.trace('onFID').putMetric('value', metric.value);
 });
 
-// Instrument onLCP
 onLCP(metric => {
   perf.trace('onLCP').putMetric('value', metric.value);
 });
