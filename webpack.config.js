@@ -1,4 +1,5 @@
 const path = require('path');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry: './public/js/app.js',
@@ -43,4 +44,16 @@ module.exports = {
             },
         ],
     },
+    optimization: {
+        minimizer: [
+          new OptimizeCSSAssetsPlugin({
+            assetNameRegExp: /\.(css|scss)$/g, 
+            cssProcessor: require('cssnano'),
+            cssProcessorPluginOptions: {
+              preset: ['default', { discardComments: { removeAll: true } }],
+            },
+            canPrint: true,
+          }),
+        ],
+      },
 };

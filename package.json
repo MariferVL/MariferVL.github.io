@@ -38,6 +38,7 @@
     "@babel/preset-env": "^7.22.10",
     "babel-loader": "^9.1.3",
     "file-loader": "^6.2.0",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
     "url-loader": "^4.1.1",
     "vite": "^4.4.9",
     "webpack": "^5.88.2",
