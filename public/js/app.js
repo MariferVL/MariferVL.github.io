@@ -1,4 +1,4 @@
-import translations from './translations.js';
+import translations from 'public\js\translations.js';
 
 
 /* Loading */
