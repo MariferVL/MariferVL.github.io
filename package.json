@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/MariferVL/MariferVL.github.io#readme",
   "dependencies": {
-    "firebase": "^10.1.0"
+    "firebase": "^10.3.0"
   },
   "devDependencies": {
     "vite": "^4.4.9",
