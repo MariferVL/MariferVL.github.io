@@ -1,6 +1,7 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js'
-
-import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-analytics.js'
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+import { getPerformance } from 'firebase/performance';
+import { onLCP, onFID, onCLS } from 'web-vitals';
 
 
 const firebaseConfig = {
@@ -15,3 +16,19 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const perf = getPerformance(app);
+
+onCLS(metric => {
+  perf.trace('onCLS').putMetric('value', metric.value);
+});
+
+// Instrument onFID
+onFID(metric => {
+  perf.trace('onFID').putMetric('value', metric.value);
+});
+
+// Instrument onLCP
+onLCP(metric => {
+  perf.trace('onLCP').putMetric('value', metric.value);
+});
+
