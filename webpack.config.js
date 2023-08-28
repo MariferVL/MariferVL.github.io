@@ -45,40 +45,15 @@ module.exports = {
         ],
     },
     optimization: {
-        minimize: true,
         minimizer: [
-            (compiler) => {
-                compiler.hooks.compilation.tap('CustomOptimizations', (compilation) => {
-                    compilation.hooks.processAssets.tapAsync(
-                        {
-                            name: 'CustomOptimizations',
-                            stage: Compilation.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
-                        },
-                        async (assets, callback) => {
-                            const cssOptimizer = new CssNanoOptimizer();
-                            await Promise.all(Object.keys(assets).map(async (assetName) => {
-                                if (assetName.endsWith('.css')) {
-                                    const asset = assets[assetName];
-                                    const optimizedCss = await cssOptimizer.optimize(asset.source());
-                                    asset.source = () => optimizedCss;
-                                }
-                            }));
-                            
-                            const terser = new TerserPlugin({
-                                extractComments: false,
-                                terserOptions: {
-                                    format: {
-                                        comments: false,
-                                    },
-                                },
-                            });
-                            await terser.optimize(compilation);
-
-                            callback(); 
-                        }
-                    );
-                });
-            },
-        ],
-    },
+            new OptimizeCSSAssetsPlugin({
+                assetNameRegExp: /\.(css|scss)$/g,
+                cssProcessor: require('cssnano'),
+                cssProcessorPluginOptions: {
+                    preset: ['default', { discardComments: { removeAll: true } }],
+                },
+                canPrint: true,
+            }),
+        ]
+    }
 };
