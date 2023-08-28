@@ -4,14 +4,13 @@
   "description": "A futuristic and visually captivating portfolio website showcasing my journey as a frontend developer. Explore my projects, skills, and creative vision for web design.",
   "main": "app.js",
   "scripts": {
-    "build": "vite build",
+    "build": "webpack",
     "deploy": "firebase deploy",
     "dev": "vite dev public",
     "start": "npm run dev",
     "lint": "eslint .",
     "test": "test --coverage",
-    "prettify": "prettier --write .",
-    "preview": "vite preview"
+    "prettify": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -35,6 +34,11 @@
     "web-vitals": "^3.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.11",
+    "@babel/preset-env": "^7.22.10",
+    "babel-loader": "^9.1.3",
+    "file-loader": "^6.2.0",
+    "url-loader": "^4.1.1",
     "vite": "^4.4.9",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
