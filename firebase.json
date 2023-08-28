@@ -17,17 +17,14 @@
         "destination": "/index.html"
       }
     ],
-    "headers": [
-      {
-        "source": "**/*.@(js|css)",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "application/$1"
-          }
-        ]
-      }
-    ]
+    "headers": [ {
+      "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+      "headers": [ {
+        "key": "Access-Control-Allow-Origin",
+        "value": "*"
+      } ]
+    } ]
+  
   }
 }
 
