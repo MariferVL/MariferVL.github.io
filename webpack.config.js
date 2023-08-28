@@ -1,5 +1,5 @@
 const path = require('path');
-const { Compilation, sources } = require('webpack'); 
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry: './public/js/app.js',
