@@ -60,9 +60,6 @@ h6 {
   padding: 0 1rem;
 }
 
-p {
-  font-size: 0.8rem;
-}
 
 a {
   text-decoration: none;
@@ -1308,6 +1305,11 @@ details[open] summary~* {
 }
 
 
+div.col-lg-6:nth-child(2) {
+  padding: 0;
+}
+
+
 
 /* Contact */
 
@@ -1467,7 +1469,7 @@ footer ul {
   }
 
 
-  #about p, .content p  {
+  #about p, .content p, .resume-text {
     margin-bottom: 2rem;
     font-size: 1rem;
   }
@@ -1560,10 +1562,7 @@ footer ul {
     padding: 3rem 11rem;
   }
 
-  .resume-text {
-    margin: 20px 0;
-    font-size: 18px;
-  }
+
 
   .resume-button {
     height: 3rem;
