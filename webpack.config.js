@@ -3,7 +3,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry: './public/js/app.js',
-    mode: 'development',
+    mode: 'production',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
