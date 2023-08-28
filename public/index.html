@@ -85,80 +85,79 @@
       </div>
     </div>
     <nav id="mainNavigation" class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large"
-      role="navigation">
-      <div class="container-fluid hover-container">
-        <a class="navbar-brand" href="#home">
-          <img src="images/viole.gif" alt="Logo" class="round-logo">
-        </a>
-        <input type="checkbox" id="checkbox" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
-          aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
-        <label id="menu" for="checkbox" class="toggle">
-          <div class="bars" id="bar1"></div>
-          <div class="bars" id="bar2"></div>
-          <div class="bars" id="bar3"></div>
-        </label>
-        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2"
-          aria-labelledby="offcanvasNavbar2Label">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
-            <button type="button" id="closeNavBtn" class="btn hover-container" data-bs-dismiss="offcanvas"
-              aria-label="Close"><i class="fas fa-times"></i>
-            </button>
-          </div>
-          <div id="navbar" class="offcanvas-body">
-            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-              <li class="nav-item hover-container">
-                <a class="nav-link show" data-translate="homeNav" aria-current="page" href="#home">Inicio</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#about" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  About Me
-                </a>
-                <ul class="dropdown-menu">
-                  <li class="hover-container"><a class="dropdown-item" href="#about">Acerca de Mi</a></li>
-                  <li class="hover-container"><a class="dropdown-item" href="#tech">Tech Stack</a></li>
-                  <li class="hover-container"><a class="dropdown-item" href="#projects">Proyectos</a></li>
-                  <li class="hover-container"><a class="dropdown-item" href="#storytelling">Story Telling</a></li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li class="hover-container"><a class="dropdown-item" href="#resume">Curriculum</a></li>
-                </ul>
-              </li>
-              <li class="nav-item hover-container">
-                <a class="nav-link" href="#life">La Vida</a>
-              </li>
-              <li class="nav-item hover-container">
-                <a class="nav-link" href="#contact">Contacto</a>
-              </li>
-              <!-- <li class="nav-item hover-container">
-                <a class="nav-link" href="#blog">Blog</a>
-              </li> -->
-            </ul>
-            <!-- <form class="d-flex mt-3 mt-lg-0" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
-          </div>
+    role="navigation">
+    <div class="container-fluid hover-container">
+      <a class="navbar-brand" href="#home">
+        <img src="images/viole.gif" alt="Logo" class="round-logo">
+      </a>
+      <input type="checkbox" id="checkbox" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
+        aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+      <label id="menu" for="checkbox" class="toggle">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+      </label>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2"
+        aria-labelledby="offcanvasNavbar2Label">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
+          <button type="button" id="closeNavBtn" class="btn hover-container" data-bs-dismiss="offcanvas"
+            aria-label="Close"><i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div id="navbar" class="offcanvas-body">
+          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+            <li class="nav-item hover-container">
+              <a class="nav-link show" data-translate="homeNav" aria-current="page" href="#home" data-translate="homeNav">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#about" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false" data-translate="aboutMe">
+                About Me
+              </a>
+              <ul class="dropdown-menu">
+                <li class="hover-container"><a class="dropdown-item" href="#about" data-translate="aboutMe">Acerca de Mi</a></li>
+                <li class="hover-container"><a class="dropdown-item" href="#tech">Tech Stack</a></li>
+                <li class="hover-container"><a class="dropdown-item" href="#projects" data-translate="projects">Proyectos</a></li>
+                <li class="hover-container"><a class="dropdown-item" href="#storytelling">Story Telling</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li class="hover-container"><a class="dropdown-item" href="#resume" data-translate="curriculum">Curriculum Vitae</a></li>
+              </ul>
+            </li>
+            <li class="nav-item hover-container">
+              <a class="nav-link" href="#life" data-translate="life">La Vida</a>
+            </li>
+            <li class="nav-item hover-container">
+              <a class="nav-link" href="#contact" data-translate="contact">Contacto</a>
+            </li>
+            <!-- <li class="nav-item hover-container">
+              <a class="nav-link" href="#blog">Blog</a>
+            </li> -->
+          </ul>
+          <!-- <form class="d-flex mt-3 mt-lg-0" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
   </header>
   <main>
     <section id="home">
       <div id="title-container">
-        <h1>
-          Yo soy <span class="changing-word">Innovadora</span>.
+        <h1 data-translate="homeTitle">
+          Yo soy <span class="changing-word" data-translate="quality">Innovadora</span>.
         </h1>
       </div>
       <div class="video-container">
         <video class="hover-container" controls>
           <source class="hover-container" src="images/videos/videoEn.mp4" type="video/mp4">
           <source class="hover-container" src="images/videos/videoEs.mp4" type="video/mp4">
-          <track class="hover-container" src="images/videos/captions.en.vtt" kind="subtitles" srclang="en" label="English">
-          <track class="hover-container" src="images/videos/captions.es.vtt" kind="subtitles" srclang="es" label="Español">
-
+          <track class="hover-container" src="images/videos/captions.en.vtt" kind="subtitles" srclang="en" label="English" data-translate="videoCaptionEn">
+          <track class="hover-container" src="images/videos/captions.es.vtt" kind="subtitles" srclang="es" label="Español" data-translate="videoCaptionEs">
         </video>
       </div>
     </section>
@@ -166,8 +165,8 @@
       <div class="row featurette">
         <div class="col-md-8">
           <article class="art-left">
-            <h2 class="pb-2 border-bottom text-white">Acerca de Mi</h2>
-            <p><br>
+            <h2 class="pb-2 border-bottom text-white" data-translate="aboutMe">Acerca de Mi</h2>
+            <p data-translate="aboutContent"><br>
               ¡Saludos, visitantes del futuro!<br><br>
               Soy <span class="fluorescent-blue">María-Fernanda Villalobos</span>, aka <span
                 class="fluorescent-pink">Marifer</span>.<br><br>
@@ -213,7 +212,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-client-side">HTML5</h3>
-              <p class="text-white">Structure of the web.</p>
+              <p class="text-white" data-translate="html5-description">Structure of the web.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -223,7 +222,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-client-side">CSS3</h3>
-              <p class="text-white">Styling and layout.</p>
+              <p class="text-white" data-translate="css3-description">Styling and layout.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -233,7 +232,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-client-side">Sass</h3>
-              <p class="text-white">Efficient CSS Preprocessor.</p>
+              <p class="text-white" data-translate="sass-description">Efficient CSS Preprocessor.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -243,7 +242,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-client-side">JavaScript</h3>
-              <p class="text-white">Interactive web elements.</p>
+              <p class="text-white" data-translate="javascript-description">Interactive web elements.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -253,7 +252,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-client-side">Angular</h3>
-              <p class="text-white">Powerful front-end framework.</p>
+              <p class="text-white" data-translate="angular-description">Powerful front-end framework.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -264,7 +263,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-client-side">TypeScript</h3>
-              <p class="text-white">Typed superset of JavaScript.</p>
+              <p class="text-white" data-translate="typescript-description">Typed superset of JavaScript.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -274,7 +273,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-client-side">Bootstrap</h3>
-              <p class="text-white">Responsive design framework.</p>
+              <p class="text-white" data-translate="bootstrap-description">Responsive design framework.</p>
             </div>
           </div>
 
@@ -286,7 +285,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-server-side">Python</h3>
-              <p class="text-white">Versatile programming language.</p>
+              <p class="text-white" data-translate="python-description">Versatile programming language.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -297,7 +296,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-server-side">Django</h3>
-              <p class="text-white">Python web framework.</p>
+              <p class="text-white" data-translate="django-description">Python web framework.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -307,7 +306,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-server-side">Node.js</h3>
-              <p class="text-white">Server-side JavaScript.</p>
+              <p class="text-white" data-translate="node-description">Server-side JavaScript.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -321,7 +320,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-server-side">Express.js</h3>
-              <p class="text-white">Node.js framework.</p>
+              <p class="text-white" data-translate="express-description">Node.js framework.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -332,7 +331,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-server-side">MySQL</h3>
-              <p class="text-white">Relational database system.</p>
+              <p class="text-white" data-translate="mysql-description">Relational database system.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -342,7 +341,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-server-side">Java</h3>
-              <p class="text-white">Object-oriented programming.</p>
+              <p class="text-white" data-translate="java-description">Object-oriented programming.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -351,7 +350,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-server-side">Rest API</h3>
-              <p class="text-white">Web service architecture.</p>
+              <p class="text-white" data-translate="rest-description">Web service architecture.</p>
             </div>
           </div>
 
@@ -363,7 +362,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-tools">Git</h3>
-              <p class="text-white">Version control.</p>
+              <p class="text-white" data-translate="git-description">Version control.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -373,7 +372,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-tools">GitHub</h3>
-              <p class="text-white">Code collaboration platform.</p>
+              <p class="text-white" data-translate="github-description">Code collaboration platform.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -383,7 +382,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-tools">Trello</h3>
-              <p class="text-white">Project management tool.</p>
+              <p class="text-white" data-translate="trello-description">Project management tool.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -393,7 +392,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-tools">Figma</h3>
-              <p class="text-white">UI/UX design collaboration.</p>
+              <p class="text-white" data-translate="figma-description">UI/UX design collaboration.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -402,7 +401,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-tools">Agile</h3>
-              <p class="text-white">Project management methodology.</p>
+              <p class="text-white" data-translate="agile-description">Project management methodology.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -412,7 +411,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-tools">Kanban</h3>
-              <p class="text-white">Visual workflow management.</p>
+              <p class="text-white" data-translate="kanban-description">Visual workflow management.</p>
             </div>
           </div>
           <div class="col-6 col-md-4 col-lg-3  d-flex align-items-start tech">
@@ -421,7 +420,7 @@
             </svg>
             <div>
               <h3 class="fw-bold mb-0 text-body-emphasis technology skill-tools">Scrum</h3>
-              <p class="text-white">Agile framework.</p>
+              <p class="text-white" data-translate="scrum-description">Agile framework.</p>
             </div>
           </div>
 
@@ -433,7 +432,7 @@
 
       <!-- Tab buttons -->
       <div class="tab-buttons">
-        <h2 class="pb-2 border-bottom">Proyectos</h2>
+        <h2 class="pb-2 border-bottom" data-translate="projects">Proyectos</h2>
 
         <button class="tab-button col my-1" data-category="javascript">JavaScript</button>
         <button class="tab-button col my-1" data-category="python">Python</button>
@@ -686,7 +685,7 @@
 
     </section> -->
     <section id="resume">
-      <h2 class="pb-2 border-bottom">Currículum Vitae</h2>
+      <h2 class="pb-2 border-bottom" data-translate="curriculum">Currículum Vitae</h2>
       <p class="resume-text">Bienvenido a mi currículum vitae. Aquí puedes encontrar información detallada sobre mi
         experiencia, habilidades y educación.</p>
       <div class="resume-buttons">
@@ -699,7 +698,7 @@
 
     <section id="life">
       <div class="container col-xxl-8 px-4 py-5">
-        <h2 class="pb-2 border-bottom">La Vida</h2>
+        <h2 class="pb-2 border-bottom" data-translate="life">La Vida</h2>
         <p class="content pb-2">En este espacio, te invito a explorar algunas facetas de mi vida y mis pensamientos a través de
           preguntas y respuestas.</p>
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -773,7 +772,7 @@
       </div>
     </section>
     <section id="contact">
-      <h2 class="pb-2 border-bottom text-white">Contacto</h2>
+      <h2 class="pb-2 border-bottom text-white" data-translate="contact">Contacto</h2>
       <div class="contact-container">
         <form action="mailto:marifervl.dev@gmail.com" method="post" enctype="text/plain">
           <!-- Dentro de tu formulario -->
@@ -801,12 +800,12 @@
   <div class="container">
     <footer class="py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#home" class="nav-link px-2 text-body-secondary">Inicio</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link px-2 text-body-secondary">Acerca de Mi</a></li>
+        <li class="nav-item"><a href="#home" class="nav-link px-2 text-body-secondary" data-translate="homeNav">Inicio</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link px-2 text-body-secondary" data-translate="aboutMe">Acerca de Mi</a></li>
         <li class="nav-item"><a href="#tech" class="nav-link px-2 text-body-secondary">Tech Stack</a></li>
-        <li class="nav-item"><a href="#projects" class="nav-link px-2 text-body-secondary">Proyectos</a></li>
-        <li class="nav-item"><a href="#life" class="nav-link px-2 text-body-secondary">La Vida</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link px-2 text-body-secondary">Contacto</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link px-2 text-body-secondary" data-translate="projects">Proyectos</a></li>
+        <li class="nav-item"><a href="#life" class="nav-link px-2 text-body-secondary" data-translate="life">La Vida</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link px-2 text-body-secondary" data-translate="contact">Contacto</a></li>
 
       </ul>
       <p class="text-center text-body-secondary"><strong>Estemos en contacto</strong></p>

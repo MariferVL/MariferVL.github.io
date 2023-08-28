@@ -34,7 +34,132 @@ const translations = {
   contact: {
     es: "Contacto",
     en: "Contact"
-  }
+  },
+  homeTitle: {
+    es: "Yo soy <span class='changing-word'>Innovadora</span>.",
+    en: "I am <span class='changing-word'>Innovator</span>."
+  },
+  videoCaptionEn: {
+    es: "Subtítulos en inglés",
+    en: "English Subtitles"
+  },
+  videoCaptionEs: {
+    es: "Subtítulos en español",
+    en: "Spanish Subtitles"
+  },
+  aboutContent: {
+    es: `¡Saludos, visitantes del futuro!<br><br>
+          Soy <span class="fluorescent-blue">María-Fernanda Villalobos</span>, aka <span
+          class="fluorescent-pink">Marifer</span>.<br><br>
+          Bienvenidos a mi espacio virtual, donde un ser tecnológico como yo se mezcla con líneas de código y
+          creatividad. Mi viaje comenzó en el mundo de la salud, pero mi pasión por la tecnología me llevó a
+          explorar
+          las maravillas del desarrollo de software.<br>
+
+          Después de incontables líneas de código y travesías por el vasto mundo del desarrollo web y móvil, aquí
+          estoy, lista para enfrentar desafíos futuristas.<br> Mi misión: transformar ideas en experiencias
+          digitales
+          asombrosas.<br>
+
+          ¡Vamos a codificar el mañana juntos!`,
+    en: `Greetings, visitors from the future!<br><br>
+          I am <span class="fluorescent-blue">María-Fernanda Villalobos</span>, aka <span
+          class="fluorescent-pink">Marifer</span>.<br><br>
+          Welcome to my virtual space, where a technological being like me blends with lines of code and
+          creativity. My journey began in the world of health, but my passion for technology led me to explore
+          the wonders of software development.<br>
+
+          After countless lines of code and journeys through the vast world of web and mobile development, here
+          I am, ready to face futuristic challenges.<br> My mission: to transform ideas into amazing digital
+          experiences.<br>
+
+          Let's code tomorrow together!`
+  },
+  "html5-description": {
+    en: "Structure of the web.",
+    es: "Estructura de la web."
+  },
+  "css3-description": {
+    en: "Styling and layout.",
+    es: "Estilos y diseño."
+  },
+  "sass-description": {
+    en: "Efficient CSS Preprocessor.",
+    es: "Preprocesador CSS eficiente."
+  },
+  "javascript-description": {
+    en: "Interactive web elements.",
+    es: "Elementos web interactivos."
+  },
+  "angular-description": {
+    en: "Powerful front-end framework.",
+    es: "Potente framework de front-end."
+  },
+  "typescript-description": {
+    en: "Typed superset of JavaScript.",
+    es: "Superset tipado de JavaScript."
+  },
+  "bootstrap-description": {
+    en: "Responsive design framework.",
+    es: "Framework de diseño responsivo."
+  },
+  "python-description": {
+    en: "Versatile programming language.",
+    es: "Lenguaje de programación versátil."
+  },
+  "django-description": {
+    en: "Python web framework.",
+    es: "Framework web de Python."
+  },
+  'node-description': {
+    en: 'Server-side JavaScript.',
+    es: 'JavaScript en el lado del servidor.'
+  },
+  'express-description':  {
+    en: 'Node.js framework.',
+    es: 'Framework de Node.js.'
+  },
+  'mysql-description': {
+    en: 'Relational database system.',
+    es: 'Sistema de base de datos relacional.'
+  },
+  'java-description':  {
+    en: 'Object-oriented programming.',
+    es: 'Programación orientada a objetos.'
+  },
+  'rest-description': {
+    en: 'Web service architecture.',
+    es: 'Arquitectura de servicios web.'
+  },
+  'git-description':  {
+    en: 'Version control.',
+    es: 'Control de versiones.'
+  },
+  'gitHub-description': {
+    en: 'Code collaboration platform.',
+    es: 'Plataforma de colaboración para código.'
+  },
+  'trello-description':  {
+    en: 'Project management tool.',
+    es: 'Herramienta de gestión de proyectos.'
+  },
+  'figma-description': {
+    en: 'UI/UX design collaboration.',
+    es: 'Colaboración en diseño de UI/UX.'
+  },
+  'agile-description': {
+    en: 'Project management methodology.',
+    es: 'Metodología de gestión de proyectos.'
+  },
+  'kanban-description':  {
+    en: 'Visual workflow management.',
+    es: 'Gestión visual de flujo de trabajo.'
+  },
+  'scrum-description': {
+    en: 'Agile framework.',
+    es: 'Marco de trabajo ágil.'
+  },
+
 };
 
 
@@ -57,7 +182,7 @@ function updateContent(lang) {
 
   elementsToTranslate.forEach(element => {
     const translationKey = element.getAttribute("data-translate");
-    element.textContent = translations[translationKey][lang];
+    element.innerHTML = translations[translationKey][lang];
   });
 }
 
@@ -156,18 +281,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
- 
+
 
 });
 
 const checkbox = document.getElementById("checkbox");
 const menuToggle = document.getElementById("menu");
 
-checkbox.addEventListener("change", function() {
+checkbox.addEventListener("change", function () {
   menuToggle.style.display = checkbox.checked ? "none" : "flex";
 });
 
-document.getElementById("closeNavBtn").addEventListener("click", function() {
+document.getElementById("closeNavBtn").addEventListener("click", function () {
   checkbox.checked = false;
   menuToggle.style.display = "flex";
 });
