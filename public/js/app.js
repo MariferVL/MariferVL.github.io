@@ -7,15 +7,49 @@ function hideLoading() {
 
 window.addEventListener('load', hideLoading);
 
+
 /* Language Switch */
 
 const translations = {
-
+  homeNav: {
+    es: "Inicio",
+    en: "Home"
+  },
+  aboutMe: {
+    es: "Acerca de Mi",
+    en: "About Me"
+  },
+  projects: {
+    es: "Proyectos",
+    en: "Projects"
+  },
+  curriculum: {
+    es: "Currículum Vitae",
+    en: "Resume"
+  },
+  life: {
+    es: "La Vida",
+    en: "Life"
+  },
+  contact: {
+    es: "Contacto",
+    en: "Contact"
+  }
 };
+
 
 document.getElementById("language-toggle").addEventListener("change", () => {
   const lang = document.getElementById("language-toggle").checked ? "en" : "es";
   updateContent(lang);
+  const video = document.querySelector("video");
+  const sourceElement = language === "en"
+    ? video.querySelector('[src="images/videos/videoEn.mp4"]')
+    : video.querySelector('[src="images/videos/videoEs.mp4"]');
+  video.load();
+  video.pause();
+  video.currentTime = 0;
+  sourceElement.removeAttribute("hidden");
+  sourceElement.siblings().setAttribute("hidden", true);
 });
 
 function updateContent(lang) {
@@ -26,6 +60,8 @@ function updateContent(lang) {
     element.textContent = translations[translationKey][lang];
   });
 }
+
+
 
 
 /* Navbar Functionality */
