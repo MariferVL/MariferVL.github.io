@@ -1,6 +1,3 @@
-import translations from 'public\js\translations.js';
-
-
 /* Loading */
 
 function hideLoading() {
@@ -39,7 +36,6 @@ document.getElementById("language-toggle").addEventListener("change", () => {
   updateContent(lang);
   updatePlaceholders(lang);
   currentLanguage = lang;
-  console.log(`Lang: ${currentLanguage}`);
 
   document.getElementById("html").setAttribute("lang", lang);
   const metaDescriptionElement = document.querySelector('meta[class="websiteDescription"][data-translate="metaDescription"]');
@@ -188,7 +184,6 @@ function change() {
   const currentWord = changingWords[index][currentLanguage];
   let changingWord = document.querySelector('.changing-word');
 
-  console.log(`currentWord: ${currentWord}`);
 
   if (!isDeleting) {
     changingWord.textContent = currentWord.slice(0, letterIndex);

@@ -1,5 +1,5 @@
 {
-   "hosting": {
+  "hosting": {
     "site": "marifer",
     "public": "public",
     "ignore": [
@@ -13,15 +13,5 @@
         "destination": "/index.html"
       }
     ]
-  },
-  "emulators": {
-    
-    "hosting": {
-      "port": 3333
-    },
-    "ui": {
-      "enabled": true
-    },
-    "singleProjectMode": true
   }
 }
