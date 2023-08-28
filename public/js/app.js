@@ -1,11 +1,4 @@
-
-let translations;
-fetch('/js/translations.json')
-  .then(response => response.json())
-  .then(data => { translations = data;
-    console.log('translations:', translations);  })
-  .catch(error => console.error('Error:', error));
-
+import { translations } from "./translations.js";
 
 /* Loading */
 
