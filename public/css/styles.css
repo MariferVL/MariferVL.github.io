@@ -790,13 +790,15 @@ section {
   background-image: linear-gradient(45deg, #EF3DF2, #7F1B8C, #350C40, #1F1426, #2745F2);
   background-clip: text;
   -webkit-background-clip: text;
-  opacity: 0.1; /* Ajusta la opacidad según tu preferencia */
+  opacity: 0.1;
+  /* Ajusta la opacidad según tu preferencia */
 }
 
 @keyframes changeBackground {
   0% {
     background-position: 0% 50%;
   }
+
   100% {
     background-position: 100% 50%;
   }
@@ -869,7 +871,8 @@ video {
   padding: 1rem;
 }
 
-#about p, .content {
+#about p,
+.content {
   font-size: 0.8rem;
   line-height: 1.6;
   text-align: justify;
@@ -1178,7 +1181,7 @@ span.highlight {
 }
 
 .icon {
-  font-size: 1rem;
+  font-size: 2.2rem;
   color: white;
 }
 
@@ -1463,25 +1466,27 @@ footer ul {
   }
 
   #title-container {
-    margin: -3.3rem auto 5rem; 
-   }
+    margin: -3.3rem auto 5rem;
+  }
 
   #home h1 {
     font-size: 2.2rem;
   }
-  
+
   .changing-word {
     font-size: 2.2rem;
 
   }
-  
+
 
   .col-md-7 {
     margin-top: 3rem;
   }
 
 
-  #about p, .content, .resume-text {
+  #about p,
+  .content,
+  .resume-text {
     margin: 2.2rem !important;
     font-size: 1rem;
   }
@@ -1535,23 +1540,24 @@ footer ul {
 
   .panel {
     margin: 2rem;
-    position: relative; 
+    position: relative;
   }
 
   .panel .line {
-    position: absolute; 
-    display: flex; 
-    gap: 3rem; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    z-index: 2; 
+    position: absolute;
+    display: flex;
+    gap: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
     bottom: 2.2rem;
-    margin-bottom: 3rem; 
+    margin-bottom: 3rem;
   }
 
-  .panel .para, .panel strong {
+  .panel .para,
+  .panel strong {
     position: absolute;
-    display: flex; 
+    display: flex;
     top: 2.2rem;
   }
 
@@ -1561,12 +1567,13 @@ footer ul {
 
   .panel .line a {
     display: flex;
-    align-items: center; 
-    height: 1.5rem; 
+    align-items: center;
+    height: 1.5rem;
   }
 
+
   .panel .line:last-child {
-    margin-bottom: 0; 
+    margin-bottom: 0;
   }
 
 
@@ -1629,6 +1636,29 @@ footer ul {
     width: 33.33%;
     height: fit-content;
     margin-bottom: 0.8rem;
+  }
+
+  .para {
+    position: relative;
+    top: 1rem;
+
+
+  }
+
+  .panel a {
+    margin: 0.3rem;
+    text-align: center;
+    position: relative;
+    height: 3rem;
+    bottom: 0rem;
+    z-index: 1;
+  }
+
+  .panel .line a .icon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
