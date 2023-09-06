@@ -213,17 +213,34 @@ const translations = {
         es: "Proyecto Pre-Admisión Laboratoria.",
     },
     updateTitle1: {
-        en: "Updates on 30-Aug-2023.",
-        es: "Actualizaciones el 30-08-2023.",
-    },
-    updateTitle2: {
-        en: "Updates on 01-Sep-2023.",
-        es: "Actualizaciones el 01-09-2023.",
+        en: "Updates on 13-Sept-2023.",
+        es: "Actualizaciones 13-09-2023.",
     },
     updateDescription: {
         en: "Projects for this section will be added.",
         es: "Se agregarán los proyectos de esta sección",
     },
+    javaDescription1: {
+        en: "Group Organizer Program.",
+        es: "Programa Organizador de Grupos.",
+    },
+    javaTitle2: {
+        en: "Secret Chamber Game",
+        es: "Juego Cámara Secreta",
+    },
+    javaDescription2: {
+        en: "BattleShip version adapted to Chilean culture.",
+        es: "Versión chilena de BattleShip.",
+    },
+    javaDescription3: {
+        en: "Industrial Safety Risk Management.",
+        es: "Gestión de Riesgos de Seguridad Industrial.",
+    },
+    // updateTitle2: {
+    //     en: "Updates on 01-Sep-2023.",
+    //     es: "Actualizaciones el 01-09-2023.",
+    // },
+
     resumeIntro: {
         en: "Welcome to my resume. Here you can find detailed information about my experience, skills, and education.",
         es: "Bienvenido a mi currículum vitae. Aquí puedes encontrar información detallada sobre mi experiencia, habilidades y educación.",
